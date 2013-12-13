@@ -1,0 +1,7 @@
+This repository contains all the metabolic maps extracted from the UCSD SBRG Simpheny database.
+
+Maps in the directory `viewer-json` can be viewed using the visbio.metabolic_map function.
+
+Maps in the directory `builder-json` can be viewed using the visbio.builder function.
+
+All the scripts to process a simpheny dump are in visbio/data/utilities.
