@@ -65,7 +65,7 @@ def main():
     try:
         # export just this map
         map_name = sys.argv[3]
-        save_map(in_directory, map_name+".json.gz", out_directory)
+        save_map(in_directory, map_name+".json", out_directory)
     except KeyError:
         # export all maps
         for filename in listdir(in_directory):

@@ -6,7 +6,7 @@ from optparse import OptionParser
 parser = OptionParser()
 parser.add_option("-f", "--format", dest="format",
                   help="choose BIGG or SimPheny formats",
-                  default="bigg")
+                  default="simpheny")
 (options, args) = parser.parse_args()
 
 if len(args) < 1:
