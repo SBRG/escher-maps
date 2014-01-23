@@ -17,41 +17,46 @@ def main():
 
     The final spec looks like:
 
-    { 'reactions': {unique_int: { 'segments': {unique_int: { 'from_node_id': 2,
-                                                              'to_node_id': 3,
-                                                              'b1': {'x':1.1, 'y':1.2},
-                                                              'b2': {'x':1.1, 'y':1.2}
-                                                            },
-                                                 ...
-                                               ],
-                                    'name': '',
-                                    'direction': '',
-                                    'abbreviation': ''
-                                    'label_x': 4.3,
-                                    'label_y': 4.5
-                                 },
-                     ...
-                    },
-      'nodes': {unique_int: {'node_type': '',
-                              'compartment_name': '',
-                              'x': 5.0,
-                              'y': 5.0,
-                              'metabolite_name': '',
-                              'metabolite_simpheny_id': '',
-                              'label_x': 5.0,
-                              'label_y': 5.0,
-                              'node_is_primary': True,
-                              'connected_segments': [ {'reaction_id': 4,
-                                                       'segment_id': 7},
-                                                       ...
-                                                    ]
+    { reactions: { unique_int: { segments: { unique_int: { from_node_id: 2,
+                                                           to_node_id: 3,
+                                                           b1: {x:1.1, y:1.2},
+                                                           b2: {x:1.1, y:1.2}
+                                                         },
+                                             ...
+                                           },
+                                 name: '',
+                                 direction: '',
+                                 abbreviation: ''
+                                 label_x: 4.3,
+                                 label_y: 4.5
+                               },
+                   ...
+                 },
+      nodes: { unique_int: { node_type: '',
+                             compartment_name: '',
+                             x: 5.0,
+                             y: 5.0,
+                             metabolite_name: '',
+                             bigg_id: '',
+                             label_x: 5.0,
+                             label_y: 5.0,
+                             node_is_primary: True,
+                             connected_segments: [ { reaction_id: 4,
+                                                     segment_id: 7 },
+                                                   ...
+                                                 ]
                              },
-                ...
-               },
-      'text_labels': { unique_int: { 'text': '',
-                                'x': 6.1,
-                                'y': 7.2 }
-                }
+               ...
+             },
+      text_labels: { unique_int: { text: '',
+                                   x: 6.1,
+                                   y: 7.2 }
+                     ...
+                   },
+      info: { max_map_w: max_map_w,
+              max_map_h: max_map_h
+            },
+      membranes: []
     }
 
     """
@@ -65,7 +70,7 @@ def main():
     try:
         # export just this map
         map_name = sys.argv[3]
-        save_map(in_directory, map_name+".json", out_directory)
+        save_map(in_directory, map_name+".json.gz", out_directory)
     except KeyError:
         # export all maps
         for filename in listdir(in_directory):
@@ -152,7 +157,7 @@ def save_map(in_directory, in_file, out_directory):
     # for export, only keep the necessary stuff
     node_keys_to_keep = ['node_type', 'compartment_name', 'x',
                          'y', 'metabolite_name',
-                         'metabolite_simpheny_id', 'metabolite_simpheny_id_compartmentalized',
+                         'bigg_id', 'bigg_id_compartmentalized',
                          'label_x',
                          'label_y', 'node_is_primary',
                          'connected_segments']
@@ -193,7 +198,7 @@ def parse_node(nodes, compartment_id_key):
         try_assignment(node, 'MAPNODEPOSITIONX', 'x', cast=float)
         try_assignment(node, 'MAPNODEPOSITIONY', 'y', cast=float)
         try_assignment(node, 'MOLECULEOFFICIALNAME', 'metabolite_name')
-        try_assignment(node, 'MOLECULEABBREVIATION', 'metabolite_simpheny_id')
+        try_assignment(node, 'MOLECULEABBREVIATION', 'bigg_id')
         try_assignment(node, 'MAPNODELABELPOSITIONX', 'label_x', cast=float)
         try_assignment(node, 'MAPNODELABELPOSITIONY', 'label_y', cast=float)
         try_assignment(node, 'MAPNODEISPRIMARY', 'node_is_primary',
@@ -203,8 +208,8 @@ def parse_node(nodes, compartment_id_key):
                        cast=lambda x: compartment_id_key[x])
 
         try:
-            node['metabolite_simpheny_id_compartmentalized'] = "%s_%s" % (node['metabolite_simpheny_id'],
-                                                                          node['compartment_name'][:1])
+            node['bigg_id_compartmentalized'] = "%s_%s" % (node['bigg_id'],
+                                                           node['compartment_name'][:1])
         except KeyError:
             pass
             
