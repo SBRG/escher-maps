@@ -8,6 +8,7 @@ from numpy import inf
 from os.path import join
 from os import listdir
 import logging
+import pandas as pd
 
 PP = pprint.PrettyPrinter(indent=4)
         
@@ -90,9 +91,12 @@ def save_map(in_directory, in_file, out_directory):
         logging.warn('Not loading file %s' % in_file)
 
     # get the compartment dictionary
-    with open(join(in_directory, "../compartment_id_key.json"), 'r') as f:
-        compartment_id_dictionary = json.load(f)
-            
+    df = pd.DataFrame.from_csv("compartment_id_key.csv")
+    compartment_id_dictionary = {}
+    for row in df.itertuples(index=True):
+        # compartment_id_dictionary[id] = [name, letter]
+        compartment_id_dictionary[row[0]] = row[1:3]
+        
     # major categories
     reactions = []; line_segments = []; text_labels = []; nodes = []
     for k, v in data.iteritems():
@@ -205,14 +209,15 @@ def parse_node(nodes, compartment_id_key):
                        cast=lambda x: True if x=='Y' else False)
         try_assignment(node, 'MAPNODECOMPARTMENT_ID', 'compartment_id', cast=int)
         try_assignment(node, 'MAPNODECOMPARTMENT_ID', 'compartment_name',
-                       cast=lambda x: compartment_id_key[x])
-
+                       cast=lambda x: compartment_id_key[int(x)][0])
+        try_assignment(node, 'MAPNODECOMPARTMENT_ID', 'compartment_letter',
+                       cast=lambda x: compartment_id_key[int(x)][1])
         try:
             node['bigg_id_compartmentalized'] = "%s_%s" % (node['bigg_id'],
-                                                           node['compartment_name'][:1])
+                                                           node['compartment_letter'])
         except KeyError:
             pass
-            
+        
         node['id'] = node['MAPOBJECT_ID']
         
     # Make into dictionary

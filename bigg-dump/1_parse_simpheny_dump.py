@@ -208,13 +208,16 @@ def add_control_points(map_dump, map_objects):
             segment['MAPLINESEGMENTCONTROLPOINTS'] = (tuple(control_point_2), tuple(control_point_1))
 
 if __name__=="__main__":
-    map_dump = parse_simpheny_dump("dumps/coremap_dump.csv")
-    reorganized_dump = parse_simpheny_dump("dumps/coremap_dump.csv", reorganized=True)
+    from sys import argv
+    parse_complete_simpheny_dump(argv[1])
     
-    with open("dumps/coremap_dump.json", "w") as f:
-        json.dump(map_dump, f, indent=4, sort_keys=True)
-    with open("dumps/coremap_dump_verbose.json", "w") as fhandle:
-        json.dump(reorganized_dump, fhandle, indent=4, sort_keys=True)
+    # map_dump = parse_simpheny_dump("dumps/coremap_dump.csv")
+    # reorganized_dump = parse_simpheny_dump("dumps/coremap_dump.csv", reorganized=True)
+    
+    # with open("dumps/coremap_dump.json", "w") as f:
+    #     json.dump(map_dump, f, indent=4, sort_keys=True)
+    # with open("dumps/coremap_dump_verbose.json", "w") as fhandle:
+    #     json.dump(reorganized_dump, fhandle, indent=4, sort_keys=True)
 
-    # dump them all!
-    parse_complete_simpheny_dump("dumps/complete_simpheny_maps_dump.csv", out_path="processed")
+    # # dump them all!
+    # parse_complete_simpheny_dump("dumps/complete_simpheny_maps_dump.csv", out_path="processed")
