@@ -1,3 +1,5 @@
+# NOTE: This already gets done in 3_simpheny_dump_json_to_builder_json.py
+
 import sys
 import json
 
