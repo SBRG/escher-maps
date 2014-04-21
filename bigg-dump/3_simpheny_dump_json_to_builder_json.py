@@ -83,7 +83,7 @@ def save_map(filename, out_directory, model_name):
     out['text_labels'] = text_labels
 
     # translate everything so x > 0 and y > 0
-    out = translate_everything(out)
+    # out = translate_everything(out)
     
     # for export, only keep the necessary stuff
     node_keys_to_keep = ['node_type', 'x', 'y',
@@ -106,16 +106,18 @@ def save_map(filename, out_directory, model_name):
 
     # get max width and height
     min_max = {'x': [inf, -inf], 'y': [inf, -inf]}
-    for k, node in nodes.iteritems():
+    for node in nodes.itervalues():
         if node['x'] < min_max['x'][0]: min_max['x'][0] = node['x']
         if node['x'] > min_max['x'][1]: min_max['x'][1] = node['x']
         if node['y'] < min_max['y'][0]: min_max['y'][0] = node['y']
         if node['y'] > min_max['y'][1]: min_max['y'][1] = node['y']
-    max_map_w = min_max['x'][1] - min_max['x'][0]
-    max_map_h = min_max['y'][1] - min_max['y'][0]
-    out['info'] = {'max_map_w': max_map_w,
-                   'max_map_h': max_map_h,
-                   'map_id': basename(filename).replace('.json', '').replace('.gz', '')}
+    width = min_max['x'][1] - min_max['x'][0]
+    height = min_max['y'][1] - min_max['y'][0]
+    out['canvas'] = { 'x': min_max['x'][0] - 0.05 * width,
+                      'y': min_max['y'][0] - 0.05 * height,
+                      'width': width + 0.10 * width,
+                      'height': height + 0.10 * height}
+    out['info'] = { 'map_id': basename(filename).replace('.json', '').replace('.gz', '') }
 
     out['membranes'] = []
         
