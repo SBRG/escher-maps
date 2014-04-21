@@ -13,7 +13,7 @@ import cobra
 import cPickle as pickle
 
 from check_spec import conforms_to_spec
-from theseus import id_for_new_id_style
+from theseus import id_for_new_id_style, load_model
 
 def main():
     """Load a processed dump file (.json or .json.gz), and generate a map for the
@@ -22,7 +22,7 @@ def main():
     """
     try:
         in_files = sys.argv[1:-2]
-        model_pickle_path = sys.argv[-2]
+        model_name = sys.argv[-2]
         out_directory = sys.argv[-1]
     except IndexError:
         raise Exception("Not enough arguments")
@@ -31,9 +31,9 @@ def main():
         raise Exception("Not enough arguments")
 
     for filename in in_files:
-        save_map(filename, out_directory, model_pickle_path)
+        save_map(filename, out_directory, model_name)
             
-def save_map(filename, out_directory, model_pickle_path):
+def save_map(filename, out_directory, model_name):
     
     if filename.endswith('.json.gz'):
         with gzip.open(filename, "r") as f:
@@ -47,8 +47,7 @@ def save_map(filename, out_directory, model_pickle_path):
         logging.warn('Not loading file %s' % filename)
 
     # get the cobra model
-    with open(model_pickle_path, 'r') as f:
-        model = pickle.load(f)
+    model = load_model(model_name)
 
     # get the compartment dictionary
     df = pd.DataFrame.from_csv("compartment_id_key.csv")
@@ -122,8 +121,6 @@ def save_map(filename, out_directory, model_pickle_path):
         
     # make sure it conforms
     conforms_to_spec(out)
-
-    # pprint(out)
     
     with open(out_file, 'w') as f: json.dump(out, f, allow_nan=False)
 
@@ -141,9 +138,10 @@ def parse_nodes(nodes, compartment_id_key):
         try_assignment(node, 'MAPNODELABELPOSITIONY', 'label_y',
                        cast=float, fallback=node['y'])
         try_assignment(node, 'MOLECULEABBREVIATION', 'bigg_id',
-                       cast=lambda x: id_for_new_id_style(x, is_metabolite=True))
+                       cast=lambda x: id_for_new_id_style(x, is_metabolite=True),
+                       fallback='')
         try_assignment(node, 'MOLECULEOFFICIALNAME', 'name',
-                       cast=str)
+                       cast=str, fallback='')
         try_assignment(node, 'MAPNODEISPRIMARY', 'node_is_primary',
                        cast=lambda x: True if x=='Y' else False, fallback=False)
         try_assignment(node, 'MAPOBJECT_ID', 'id',
@@ -153,11 +151,9 @@ def parse_nodes(nodes, compartment_id_key):
                        cast=lambda x: compartment_id_key[int(x)][0])
         try_assignment(node, 'MAPNODECOMPARTMENT_ID', 'compartment_letter',
                        cast=lambda x: compartment_id_key[int(x)][1])
-        try:
+        if node['bigg_id'] != '' and node['compartment_letter'] is not None:
             node['bigg_id'] = "%s_%s" % (node['bigg_id'],
                                          node['compartment_letter'])
-        except KeyError:
-            pass
         
     # Make into dictionary
     return {a['id']: a for a in nodes}
@@ -175,9 +171,9 @@ def check_and_add_to_nodes(nodes, node_id, segment_id, reaction_id):
         
 def to_x_y(array):
     x = float(array[0])
-    if isnan(x): x = None
     y = float(array[1])
-    if isnan(y): y = None
+    if isnan(x) or isnan(y):
+        return None
     return {'x': x, 'y': y}
 
 def parse_segments(segments, reactions, nodes):

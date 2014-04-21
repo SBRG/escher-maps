@@ -11,18 +11,20 @@ from theseus import id_for_new_id_style
 
 def main():
     try:
-        in_file = argv[1]
-        search_dir = argv[2]
-        model_pickle = argv[3]
+        search_dir = argv[1]
+        model_pickle = argv[2]
     except:
         raise Exception('Not enough arguments.')
+    try:
+        in_file = argv[3]
+    except:
+        in_file = None
 
-    with open(in_file) as f:
-        svg = f.read()
-
-    metabolite_count = len(re.findall(r"fill:rgb\(255,160,128\)", svg))
-    print 'metabolite_count: %d' % metabolite_count
-    # ids = set(re.findall(r">([^<\[\]]*)(?:\[[a-z]+\])?</text>", svg))
+    if in_file:
+        with open(in_file) as f: svg = f.read()
+        metabolite_count = len(re.findall(r"fill:rgb\(255,160,128\)", svg))
+        print 'metabolite_count: %d' % metabolite_count
+        # ids = set(re.findall(r">([^<\[\]]*)(?:\[[a-z]+\])?</text>", svg))
 
     with open(model_pickle, 'r') as f:
         model = pickle.load(f)
@@ -65,7 +67,8 @@ def main():
     for score in scores:
         print score
     print ('path', 'id match %', 'node count', 'reaction_count')
-    print 'svg metabolite_count: %d' % metabolite_count    
+    if in_file:
+        print 'svg metabolite_count: %d' % metabolite_count    
 
 if __name__=="__main__":
     main()
