@@ -231,7 +231,12 @@ def parse_reactions(reactions, model, nodes):
                 reaction['label_y'] = node['y'] + d['y']
         
         # use the cobra model
-        cobra_reaction = model.reactions.get_by_id(reaction['bigg_id'])
+        try:
+            cobra_reaction = model.reactions.get_by_id(reaction['bigg_id'])
+        except KeyError:
+            print 'Could not find reaction %s. Assuming it is reversible.' % reaction['bigg_id']
+            reaction['reversibility']  = True
+            reaction['metabolites'] = {}
         # get the reversibility
         reaction['reversibility']  = (cobra_reaction.lower_bound < 0)
         # get the metabolites

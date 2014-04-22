@@ -7,12 +7,12 @@ import json
 from operator import itemgetter
 import cPickle as pickle
 
-from theseus import id_for_new_id_style
+from theseus import id_for_new_id_style, load_model
 
 def main():
     try:
         search_dir = argv[1]
-        model_pickle = argv[2]
+        model_name = argv[2]
     except:
         raise Exception('Not enough arguments.')
     try:
@@ -26,8 +26,7 @@ def main():
         print 'metabolite_count: %d' % metabolite_count
         # ids = set(re.findall(r">([^<\[\]]*)(?:\[[a-z]+\])?</text>", svg))
 
-    with open(model_pickle, 'r') as f:
-        model = pickle.load(f)
+    model = load_model(model_name)
     ids = [id_for_new_id_style(x.id) for x in model.reactions]
     
     scores = []
