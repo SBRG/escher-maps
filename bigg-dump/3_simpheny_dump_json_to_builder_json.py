@@ -1,3 +1,6 @@
+"""Process svg files to generate escher json files.
+
+"""
 import sys
 import gzip
 import json
@@ -30,7 +33,19 @@ def main():
     if len(in_files)==0:
         raise Exception("Not enough arguments")
 
-    for filename in in_files:
+    if in_files[0].endswith('.tsv'):
+        in_files = (pd.DataFrame
+                    .from_csv(in_files[0], sep='\t')
+                    .loc[:, 'path'])
+
+    size = len(in_files)
+    for i, filename in enumerate(in_files):
+        # progress
+        sys.stdout.write('\r')
+        # the exact output you're looking for:
+        sys.stdout.write("%d / %d" % (i + 1, size))
+        sys.stdout.flush()
+        
         save_map(filename, out_directory, model_name)
             
 def save_map(filename, out_directory, model_name):
@@ -71,6 +86,8 @@ def save_map(filename, out_directory, model_name):
     parse_segments(segments, reactions, nodes)
         
     # do the reactions
+
+    # look out for r2075900 in iJO1366_central_metabolism
     reactions = parse_reactions(reactions, model, nodes)
 
     # do the text labels
@@ -158,7 +175,7 @@ def parse_nodes(nodes, compartment_id_key):
                                          node['compartment_letter'])
         
     # Make into dictionary
-    return {a['id']: a for a in nodes}
+    return {a['id']: a for a in nodes if a['node_type'] not in ['system']}
 
 def check_and_add_to_nodes(nodes, node_id, segment_id, reaction_id):
     try:

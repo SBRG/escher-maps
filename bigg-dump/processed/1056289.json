@@ -1,0 +1,1769 @@
+{
+    "MAPLINESEGMENT": [
+        {
+            "MAPLINESEGMENTCONTROLPOINTS": [
+                [
+                    515.0, 
+                    368.5
+                ], 
+                [
+                    515.0, 
+                    400.0
+                ]
+            ], 
+            "MAPLINESEGMENTFROMNODE": {
+                "MAPNODECOMPARTMENT_ID": "1", 
+                "MAPNODEISPRIMARY": "Y", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "475", 
+                "MAPNODELABELPOSITIONY": "345", 
+                "MAPNODEMOLECULE_ID": "36977", 
+                "MAPNODENODETYPE": "METABOLITE", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "355", 
+                "METABOLICMAP_ID": "1056289", 
+                "MOLECULEABBREVIATION": "g6p", 
+                "MOLECULEOFFICIALNAME": "D-Glucose 6-phosphate"
+            }, 
+            "MAPLINESEGMENTFROMNODE_ID": "1056264", 
+            "MAPLINESEGMENTREACTION": {
+                "MAPREACTIONREACTION_ID": "134518", 
+                "METABOLICMAP_ID": "1056289", 
+                "REACTIONABBREVATION": "PGI", 
+                "REACTIONDIRECTION": "Reversible", 
+                "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+                "REACTIONISGLOBAL": "N", 
+                "REACTIONOFFICIALNAME": "glucose-6-phosphate isomerase"
+            }, 
+            "MAPLINESEGMENTREACTION_ID": "1056281", 
+            "MAPLINESEGMENTTONODE": {
+                "MAPNODEISPRIMARY": "Y", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "475", 
+                "MAPNODELABELPOSITIONY": "445", 
+                "MAPNODENODETYPE": "MIDMARKER", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "445", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTTONODE_ID": "1056290", 
+            "MAPOBJECT_ID": "1056303", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPLINESEGMENTCONTROLPOINTS": [
+                [
+                    515.0, 
+                    458.5
+                ], 
+                [
+                    515.0, 
+                    490.0
+                ]
+            ], 
+            "MAPLINESEGMENTFROMNODE": {
+                "MAPNODEISPRIMARY": "Y", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "475", 
+                "MAPNODELABELPOSITIONY": "445", 
+                "MAPNODENODETYPE": "MIDMARKER", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "445", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTFROMNODE_ID": "1056290", 
+            "MAPLINESEGMENTREACTION": {
+                "MAPREACTIONREACTION_ID": "134518", 
+                "METABOLICMAP_ID": "1056289", 
+                "REACTIONABBREVATION": "PGI", 
+                "REACTIONDIRECTION": "Reversible", 
+                "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+                "REACTIONISGLOBAL": "N", 
+                "REACTIONOFFICIALNAME": "glucose-6-phosphate isomerase"
+            }, 
+            "MAPLINESEGMENTREACTION_ID": "1056281", 
+            "MAPLINESEGMENTTONODE": {
+                "MAPNODECOMPARTMENT_ID": "1", 
+                "MAPNODEISPRIMARY": "Y", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "545", 
+                "MAPNODELABELPOSITIONY": "495", 
+                "MAPNODEMOLECULE_ID": "33795", 
+                "MAPNODENODETYPE": "METABOLITE", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "535", 
+                "METABOLICMAP_ID": "1056289", 
+                "MOLECULEABBREVIATION": "f6p", 
+                "MOLECULEOFFICIALNAME": "D-Fructose 6-phosphate"
+            }, 
+            "MAPLINESEGMENTTONODE_ID": "1056265", 
+            "MAPOBJECT_ID": "1056304", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPLINESEGMENTCONTROLPOINTS": [
+                [
+                    340.0, 
+                    1080.0
+                ], 
+                [
+                    375.0, 
+                    1080.0
+                ]
+            ], 
+            "MAPLINESEGMENTFROMNODE": {
+                "MAPNODECOMPARTMENT_ID": "1", 
+                "MAPNODEISPRIMARY": "Y", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "295", 
+                "MAPNODELABELPOSITIONY": "1070", 
+                "MAPNODEMOLECULE_ID": "33898", 
+                "MAPNODENODETYPE": "METABOLITE", 
+                "MAPNODEPOSITIONX": "325", 
+                "MAPNODEPOSITIONY": "1080", 
+                "METABOLICMAP_ID": "1056289", 
+                "MOLECULEABBREVIATION": "dhap", 
+                "MOLECULEOFFICIALNAME": "Dihydroxyacetone phosphate"
+            }, 
+            "MAPLINESEGMENTFROMNODE_ID": "1056266", 
+            "MAPLINESEGMENTREACTION": {
+                "MAPREACTIONREACTION_ID": "134757", 
+                "METABOLICMAP_ID": "1056289", 
+                "REACTIONABBREVATION": "TPI", 
+                "REACTIONDIRECTION": "Reversible", 
+                "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+                "REACTIONISGLOBAL": "N", 
+                "REACTIONOFFICIALNAME": "triose-phosphate isomerase"
+            }, 
+            "MAPLINESEGMENTREACTION_ID": "1056282", 
+            "MAPLINESEGMENTTONODE": {
+                "MAPNODEISPRIMARY": "Y", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "425", 
+                "MAPNODELABELPOSITIONY": "1110", 
+                "MAPNODENODETYPE": "MIDMARKER", 
+                "MAPNODEPOSITIONX": "425", 
+                "MAPNODEPOSITIONY": "1080", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTTONODE_ID": "1056291", 
+            "MAPOBJECT_ID": "1056305", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPLINESEGMENTCONTROLPOINTS": [
+                [
+                    438.5, 
+                    1080.0
+                ], 
+                [
+                    470.0, 
+                    1080.0
+                ]
+            ], 
+            "MAPLINESEGMENTFROMNODE": {
+                "MAPNODEISPRIMARY": "Y", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "425", 
+                "MAPNODELABELPOSITIONY": "1110", 
+                "MAPNODENODETYPE": "MIDMARKER", 
+                "MAPNODEPOSITIONX": "425", 
+                "MAPNODEPOSITIONY": "1080", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTFROMNODE_ID": "1056291", 
+            "MAPLINESEGMENTREACTION": {
+                "MAPREACTIONREACTION_ID": "134757", 
+                "METABOLICMAP_ID": "1056289", 
+                "REACTIONABBREVATION": "TPI", 
+                "REACTIONDIRECTION": "Reversible", 
+                "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+                "REACTIONISGLOBAL": "N", 
+                "REACTIONOFFICIALNAME": "triose-phosphate isomerase"
+            }, 
+            "MAPLINESEGMENTREACTION_ID": "1056282", 
+            "MAPLINESEGMENTTONODE": {
+                "MAPNODECOMPARTMENT_ID": "1", 
+                "MAPNODEISPRIMARY": "Y", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "555", 
+                "MAPNODELABELPOSITIONY": "1080", 
+                "MAPNODEMOLECULE_ID": "35637", 
+                "MAPNODENODETYPE": "METABOLITE", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "1080", 
+                "METABOLICMAP_ID": "1056289", 
+                "MOLECULEABBREVIATION": "g3p", 
+                "MOLECULEOFFICIALNAME": "Glyceraldehyde 3-phosphate"
+            }, 
+            "MAPLINESEGMENTTONODE_ID": "1056267", 
+            "MAPOBJECT_ID": "1056306", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPLINESEGMENTFROMNODE": {
+                "MAPNODEISPRIMARY": "N", 
+                "MAPNODENODETYPE": "MULTIMARKER", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "665", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTFROMNODE_ID": "1056293", 
+            "MAPLINESEGMENTREACTION": {
+                "MAPREACTIONREACTION_ID": "134377", 
+                "METABOLICMAP_ID": "1056289", 
+                "REACTIONABBREVATION": "PFK", 
+                "REACTIONDIRECTION": "Irreversible", 
+                "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+                "REACTIONISGLOBAL": "N", 
+                "REACTIONOFFICIALNAME": "phosphofructokinase"
+            }, 
+            "MAPLINESEGMENTREACTION_ID": "1056283", 
+            "MAPLINESEGMENTTONODE": {
+                "MAPNODEISPRIMARY": "Y", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "545", 
+                "MAPNODELABELPOSITIONY": "685", 
+                "MAPNODENODETYPE": "MIDMARKER", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "685", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTTONODE_ID": "1056292", 
+            "MAPOBJECT_ID": "1056307", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPLINESEGMENTFROMNODE": {
+                "MAPNODEISPRIMARY": "Y", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "545", 
+                "MAPNODELABELPOSITIONY": "685", 
+                "MAPNODENODETYPE": "MIDMARKER", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "685", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTFROMNODE_ID": "1056292", 
+            "MAPLINESEGMENTREACTION": {
+                "MAPREACTIONREACTION_ID": "134377", 
+                "METABOLICMAP_ID": "1056289", 
+                "REACTIONABBREVATION": "PFK", 
+                "REACTIONDIRECTION": "Irreversible", 
+                "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+                "REACTIONISGLOBAL": "N", 
+                "REACTIONOFFICIALNAME": "phosphofructokinase"
+            }, 
+            "MAPLINESEGMENTREACTION_ID": "1056283", 
+            "MAPLINESEGMENTTONODE": {
+                "MAPNODEISPRIMARY": "N", 
+                "MAPNODENODETYPE": "MULTIMARKER", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "725", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTTONODE_ID": "1056294", 
+            "MAPOBJECT_ID": "1056308", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPLINESEGMENTCONTROLPOINTS": [
+                [
+                    515.0, 
+                    600.0
+                ], 
+                [
+                    515.0, 
+                    645.5
+                ]
+            ], 
+            "MAPLINESEGMENTFROMNODE": {
+                "MAPNODECOMPARTMENT_ID": "1", 
+                "MAPNODEISPRIMARY": "Y", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "545", 
+                "MAPNODELABELPOSITIONY": "495", 
+                "MAPNODEMOLECULE_ID": "33795", 
+                "MAPNODENODETYPE": "METABOLITE", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "535", 
+                "METABOLICMAP_ID": "1056289", 
+                "MOLECULEABBREVIATION": "f6p", 
+                "MOLECULEOFFICIALNAME": "D-Fructose 6-phosphate"
+            }, 
+            "MAPLINESEGMENTFROMNODE_ID": "1056265", 
+            "MAPLINESEGMENTREACTION": {
+                "MAPREACTIONREACTION_ID": "134377", 
+                "METABOLICMAP_ID": "1056289", 
+                "REACTIONABBREVATION": "PFK", 
+                "REACTIONDIRECTION": "Irreversible", 
+                "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+                "REACTIONISGLOBAL": "N", 
+                "REACTIONOFFICIALNAME": "phosphofructokinase"
+            }, 
+            "MAPLINESEGMENTREACTION_ID": "1056283", 
+            "MAPLINESEGMENTTONODE": {
+                "MAPNODEISPRIMARY": "N", 
+                "MAPNODENODETYPE": "MULTIMARKER", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "665", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTTONODE_ID": "1056293", 
+            "MAPOBJECT_ID": "1056309", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPLINESEGMENTCONTROLPOINTS": [
+                [
+                    515.0, 
+                    632.98437881283576
+                ], 
+                [
+                    515.0, 
+                    655.39531364385073
+                ]
+            ], 
+            "MAPLINESEGMENTFROMNODE": {
+                "MAPNODECOMPARTMENT_ID": "1", 
+                "MAPNODEISPRIMARY": "N", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "585", 
+                "MAPNODELABELPOSITIONY": "615", 
+                "MAPNODEMOLECULE_ID": "33477", 
+                "MAPNODENODETYPE": "METABOLITE", 
+                "MAPNODEPOSITIONX": "555", 
+                "MAPNODEPOSITIONY": "615", 
+                "METABOLICMAP_ID": "1056289", 
+                "MOLECULEABBREVIATION": "atp", 
+                "MOLECULEOFFICIALNAME": "ATP"
+            }, 
+            "MAPLINESEGMENTFROMNODE_ID": "1056268", 
+            "MAPLINESEGMENTREACTION": {
+                "MAPREACTIONREACTION_ID": "134377", 
+                "METABOLICMAP_ID": "1056289", 
+                "REACTIONABBREVATION": "PFK", 
+                "REACTIONDIRECTION": "Irreversible", 
+                "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+                "REACTIONISGLOBAL": "N", 
+                "REACTIONOFFICIALNAME": "phosphofructokinase"
+            }, 
+            "MAPLINESEGMENTREACTION_ID": "1056283", 
+            "MAPLINESEGMENTTONODE": {
+                "MAPNODEISPRIMARY": "N", 
+                "MAPNODENODETYPE": "MULTIMARKER", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "665", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTTONODE_ID": "1056293", 
+            "MAPOBJECT_ID": "1056310", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPLINESEGMENTCONTROLPOINTS": [
+                [
+                    515.0, 
+                    737.09338662244784
+                ], 
+                [
+                    515.0, 
+                    765.31128874149272
+                ]
+            ], 
+            "MAPLINESEGMENTFROMNODE": {
+                "MAPNODEISPRIMARY": "N", 
+                "MAPNODENODETYPE": "MULTIMARKER", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "725", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTFROMNODE_ID": "1056294", 
+            "MAPLINESEGMENTREACTION": {
+                "MAPREACTIONREACTION_ID": "134377", 
+                "METABOLICMAP_ID": "1056289", 
+                "REACTIONABBREVATION": "PFK", 
+                "REACTIONDIRECTION": "Irreversible", 
+                "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+                "REACTIONISGLOBAL": "N", 
+                "REACTIONOFFICIALNAME": "phosphofructokinase"
+            }, 
+            "MAPLINESEGMENTREACTION_ID": "1056283", 
+            "MAPLINESEGMENTTONODE": {
+                "MAPNODECOMPARTMENT_ID": "1", 
+                "MAPNODEISPRIMARY": "N", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "615", 
+                "MAPNODELABELPOSITIONY": "765", 
+                "MAPNODEMOLECULE_ID": "33496", 
+                "MAPNODENODETYPE": "METABOLITE", 
+                "MAPNODEPOSITIONX": "585", 
+                "MAPNODEPOSITIONY": "765", 
+                "METABOLICMAP_ID": "1056289", 
+                "MOLECULEABBREVIATION": "adp", 
+                "MOLECULEOFFICIALNAME": "ADP"
+            }, 
+            "MAPLINESEGMENTTONODE_ID": "1056269", 
+            "MAPOBJECT_ID": "1056311", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPLINESEGMENTCONTROLPOINTS": [
+                [
+                    515.0, 
+                    746.0
+                ], 
+                [
+                    515.0, 
+                    795.0
+                ]
+            ], 
+            "MAPLINESEGMENTFROMNODE": {
+                "MAPNODEISPRIMARY": "N", 
+                "MAPNODENODETYPE": "MULTIMARKER", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "725", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTFROMNODE_ID": "1056294", 
+            "MAPLINESEGMENTREACTION": {
+                "MAPREACTIONREACTION_ID": "134377", 
+                "METABOLICMAP_ID": "1056289", 
+                "REACTIONABBREVATION": "PFK", 
+                "REACTIONDIRECTION": "Irreversible", 
+                "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+                "REACTIONISGLOBAL": "N", 
+                "REACTIONOFFICIALNAME": "phosphofructokinase"
+            }, 
+            "MAPLINESEGMENTREACTION_ID": "1056283", 
+            "MAPLINESEGMENTTONODE": {
+                "MAPNODECOMPARTMENT_ID": "1", 
+                "MAPNODEISPRIMARY": "Y", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "475", 
+                "MAPNODELABELPOSITIONY": "865", 
+                "MAPNODEMOLECULE_ID": "34717", 
+                "MAPNODENODETYPE": "METABOLITE", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "865", 
+                "METABOLICMAP_ID": "1056289", 
+                "MOLECULEABBREVIATION": "fdp", 
+                "MOLECULEOFFICIALNAME": "D-Fructose 1,6-bisphosphate"
+            }, 
+            "MAPLINESEGMENTTONODE_ID": "1056270", 
+            "MAPOBJECT_ID": "1056312", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPLINESEGMENTCONTROLPOINTS": [
+                [
+                    515.0, 
+                    740.44344521148048
+                ], 
+                [
+                    515.0, 
+                    776.47815070493505
+                ]
+            ], 
+            "MAPLINESEGMENTFROMNODE": {
+                "MAPNODEISPRIMARY": "N", 
+                "MAPNODENODETYPE": "MULTIMARKER", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "725", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTFROMNODE_ID": "1056294", 
+            "MAPLINESEGMENTREACTION": {
+                "MAPREACTIONREACTION_ID": "134377", 
+                "METABOLICMAP_ID": "1056289", 
+                "REACTIONABBREVATION": "PFK", 
+                "REACTIONDIRECTION": "Irreversible", 
+                "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+                "REACTIONISGLOBAL": "N", 
+                "REACTIONOFFICIALNAME": "phosphofructokinase"
+            }, 
+            "MAPLINESEGMENTREACTION_ID": "1056283", 
+            "MAPLINESEGMENTTONODE": {
+                "MAPNODECOMPARTMENT_ID": "1", 
+                "MAPNODEISPRIMARY": "N", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "595", 
+                "MAPNODELABELPOSITIONY": "815", 
+                "MAPNODEMOLECULE_ID": "33778", 
+                "MAPNODENODETYPE": "METABOLITE", 
+                "MAPNODEPOSITIONX": "565", 
+                "MAPNODEPOSITIONY": "815", 
+                "METABOLICMAP_ID": "1056289", 
+                "MOLECULEABBREVIATION": "h", 
+                "MOLECULEOFFICIALNAME": "H+"
+            }, 
+            "MAPLINESEGMENTTONODE_ID": "1056271", 
+            "MAPOBJECT_ID": "1056313", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPLINESEGMENTFROMNODE": {
+                "MAPNODEISPRIMARY": "N", 
+                "MAPNODENODETYPE": "MULTIMARKER", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "165", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTFROMNODE_ID": "1056296", 
+            "MAPLINESEGMENTREACTION": {
+                "MAPREACTIONREACTION_ID": "134052", 
+                "METABOLICMAP_ID": "1056289", 
+                "REACTIONABBREVATION": "HEX1", 
+                "REACTIONDIRECTION": "Irreversible", 
+                "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+                "REACTIONISGLOBAL": "N", 
+                "REACTIONOFFICIALNAME": "hexokinase (D-glucose:ATP)"
+            }, 
+            "MAPLINESEGMENTREACTION_ID": "1056286", 
+            "MAPLINESEGMENTTONODE": {
+                "MAPNODEISPRIMARY": "Y", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "485", 
+                "MAPNODELABELPOSITIONY": "185", 
+                "MAPNODENODETYPE": "MIDMARKER", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "185", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTTONODE_ID": "1056295", 
+            "MAPOBJECT_ID": "1056314", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPLINESEGMENTFROMNODE": {
+                "MAPNODEISPRIMARY": "Y", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "485", 
+                "MAPNODELABELPOSITIONY": "185", 
+                "MAPNODENODETYPE": "MIDMARKER", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "185", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTFROMNODE_ID": "1056295", 
+            "MAPLINESEGMENTREACTION": {
+                "MAPREACTIONREACTION_ID": "134052", 
+                "METABOLICMAP_ID": "1056289", 
+                "REACTIONABBREVATION": "HEX1", 
+                "REACTIONDIRECTION": "Irreversible", 
+                "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+                "REACTIONISGLOBAL": "N", 
+                "REACTIONOFFICIALNAME": "hexokinase (D-glucose:ATP)"
+            }, 
+            "MAPLINESEGMENTREACTION_ID": "1056286", 
+            "MAPLINESEGMENTTONODE": {
+                "MAPNODEISPRIMARY": "N", 
+                "MAPNODENODETYPE": "MULTIMARKER", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "205", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTTONODE_ID": "1056297", 
+            "MAPOBJECT_ID": "1056315", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPLINESEGMENTCONTROLPOINTS": [
+                [
+                    515.0, 
+                    121.98837366478686
+                ], 
+                [
+                    515.0, 
+                    152.09651209943607
+                ]
+            ], 
+            "MAPLINESEGMENTFROMNODE": {
+                "MAPNODECOMPARTMENT_ID": "1", 
+                "MAPNODEISPRIMARY": "N", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "615", 
+                "MAPNODELABELPOSITIONY": "115", 
+                "MAPNODEMOLECULE_ID": "33477", 
+                "MAPNODENODETYPE": "METABOLITE", 
+                "MAPNODEPOSITIONX": "585", 
+                "MAPNODEPOSITIONY": "115", 
+                "METABOLICMAP_ID": "1056289", 
+                "MOLECULEABBREVIATION": "atp", 
+                "MOLECULEOFFICIALNAME": "ATP"
+            }, 
+            "MAPLINESEGMENTFROMNODE_ID": "1056275", 
+            "MAPLINESEGMENTREACTION": {
+                "MAPREACTIONREACTION_ID": "134052", 
+                "METABOLICMAP_ID": "1056289", 
+                "REACTIONABBREVATION": "HEX1", 
+                "REACTIONDIRECTION": "Irreversible", 
+                "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+                "REACTIONISGLOBAL": "N", 
+                "REACTIONOFFICIALNAME": "hexokinase (D-glucose:ATP)"
+            }, 
+            "MAPLINESEGMENTREACTION_ID": "1056286", 
+            "MAPLINESEGMENTTONODE": {
+                "MAPNODEISPRIMARY": "N", 
+                "MAPNODENODETYPE": "MULTIMARKER", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "165", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTTONODE_ID": "1056296", 
+            "MAPOBJECT_ID": "1056316", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPLINESEGMENTCONTROLPOINTS": [
+                [
+                    515.0, 
+                    112.49761910160645
+                ], 
+                [
+                    515.0, 
+                    149.24928573048194
+                ]
+            ], 
+            "MAPLINESEGMENTFROMNODE": {
+                "MAPNODECOMPARTMENT_ID": "1", 
+                "MAPNODEISPRIMARY": "Y", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "556", 
+                "MAPNODELABELPOSITIONY": "60", 
+                "MAPNODEMOLECULE_ID": "33582", 
+                "MAPNODENODETYPE": "METABOLITE", 
+                "MAPNODEPOSITIONX": "516", 
+                "MAPNODEPOSITIONY": "60", 
+                "METABOLICMAP_ID": "1056289", 
+                "MOLECULEABBREVIATION": "glc-D", 
+                "MOLECULEOFFICIALNAME": "D-Glucose"
+            }, 
+            "MAPLINESEGMENTFROMNODE_ID": "1056276", 
+            "MAPLINESEGMENTREACTION": {
+                "MAPREACTIONREACTION_ID": "134052", 
+                "METABOLICMAP_ID": "1056289", 
+                "REACTIONABBREVATION": "HEX1", 
+                "REACTIONDIRECTION": "Irreversible", 
+                "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+                "REACTIONISGLOBAL": "N", 
+                "REACTIONOFFICIALNAME": "hexokinase (D-glucose:ATP)"
+            }, 
+            "MAPLINESEGMENTREACTION_ID": "1056286", 
+            "MAPLINESEGMENTTONODE": {
+                "MAPNODEISPRIMARY": "N", 
+                "MAPNODENODETYPE": "MULTIMARKER", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "165", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTTONODE_ID": "1056296", 
+            "MAPOBJECT_ID": "1056317", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPLINESEGMENTCONTROLPOINTS": [
+                [
+                    515.0, 
+                    224.20937271229855
+                ], 
+                [
+                    515.0, 
+                    269.03124237432849
+                ]
+            ], 
+            "MAPLINESEGMENTFROMNODE": {
+                "MAPNODEISPRIMARY": "N", 
+                "MAPNODENODETYPE": "MULTIMARKER", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "205", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTFROMNODE_ID": "1056297", 
+            "MAPLINESEGMENTREACTION": {
+                "MAPREACTIONREACTION_ID": "134052", 
+                "METABOLICMAP_ID": "1056289", 
+                "REACTIONABBREVATION": "HEX1", 
+                "REACTIONDIRECTION": "Irreversible", 
+                "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+                "REACTIONISGLOBAL": "N", 
+                "REACTIONOFFICIALNAME": "hexokinase (D-glucose:ATP)"
+            }, 
+            "MAPLINESEGMENTREACTION_ID": "1056286", 
+            "MAPLINESEGMENTTONODE": {
+                "MAPNODECOMPARTMENT_ID": "1", 
+                "MAPNODEISPRIMARY": "N", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "645", 
+                "MAPNODELABELPOSITIONY": "285", 
+                "MAPNODEMOLECULE_ID": "33496", 
+                "MAPNODENODETYPE": "METABOLITE", 
+                "MAPNODEPOSITIONX": "615", 
+                "MAPNODEPOSITIONY": "285", 
+                "METABOLICMAP_ID": "1056289", 
+                "MOLECULEABBREVIATION": "adp", 
+                "MOLECULEOFFICIALNAME": "ADP"
+            }, 
+            "MAPLINESEGMENTTONODE_ID": "1056277", 
+            "MAPOBJECT_ID": "1056318", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPLINESEGMENTCONTROLPOINTS": [
+                [
+                    515.0, 
+                    227.5
+                ], 
+                [
+                    515.0, 
+                    280.0
+                ]
+            ], 
+            "MAPLINESEGMENTFROMNODE": {
+                "MAPNODEISPRIMARY": "N", 
+                "MAPNODENODETYPE": "MULTIMARKER", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "205", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTFROMNODE_ID": "1056297", 
+            "MAPLINESEGMENTREACTION": {
+                "MAPREACTIONREACTION_ID": "134052", 
+                "METABOLICMAP_ID": "1056289", 
+                "REACTIONABBREVATION": "HEX1", 
+                "REACTIONDIRECTION": "Irreversible", 
+                "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+                "REACTIONISGLOBAL": "N", 
+                "REACTIONOFFICIALNAME": "hexokinase (D-glucose:ATP)"
+            }, 
+            "MAPLINESEGMENTREACTION_ID": "1056286", 
+            "MAPLINESEGMENTTONODE": {
+                "MAPNODECOMPARTMENT_ID": "1", 
+                "MAPNODEISPRIMARY": "Y", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "475", 
+                "MAPNODELABELPOSITIONY": "345", 
+                "MAPNODEMOLECULE_ID": "36977", 
+                "MAPNODENODETYPE": "METABOLITE", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "355", 
+                "METABOLICMAP_ID": "1056289", 
+                "MOLECULEABBREVIATION": "g6p", 
+                "MOLECULEOFFICIALNAME": "D-Glucose 6-phosphate"
+            }, 
+            "MAPLINESEGMENTTONODE_ID": "1056264", 
+            "MAPOBJECT_ID": "1056319", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPLINESEGMENTCONTROLPOINTS": [
+                [
+                    515.0, 
+                    220.07481343168132
+                ], 
+                [
+                    515.0, 
+                    255.24937810560445
+                ]
+            ], 
+            "MAPLINESEGMENTFROMNODE": {
+                "MAPNODEISPRIMARY": "N", 
+                "MAPNODENODETYPE": "MULTIMARKER", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "205", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTFROMNODE_ID": "1056297", 
+            "MAPLINESEGMENTREACTION": {
+                "MAPREACTIONREACTION_ID": "134052", 
+                "METABOLICMAP_ID": "1056289", 
+                "REACTIONABBREVATION": "HEX1", 
+                "REACTIONDIRECTION": "Irreversible", 
+                "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+                "REACTIONISGLOBAL": "N", 
+                "REACTIONOFFICIALNAME": "hexokinase (D-glucose:ATP)"
+            }, 
+            "MAPLINESEGMENTREACTION_ID": "1056286", 
+            "MAPLINESEGMENTTONODE": {
+                "MAPNODECOMPARTMENT_ID": "1", 
+                "MAPNODEISPRIMARY": "N", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "645", 
+                "MAPNODELABELPOSITIONY": "215", 
+                "MAPNODEMOLECULE_ID": "33778", 
+                "MAPNODENODETYPE": "METABOLITE", 
+                "MAPNODEPOSITIONX": "615", 
+                "MAPNODEPOSITIONY": "215", 
+                "METABOLICMAP_ID": "1056289", 
+                "MOLECULEABBREVIATION": "h", 
+                "MOLECULEOFFICIALNAME": "H+"
+            }, 
+            "MAPLINESEGMENTTONODE_ID": "1056278", 
+            "MAPOBJECT_ID": "1056320", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPLINESEGMENTFROMNODE": {
+                "MAPNODEISPRIMARY": "N", 
+                "MAPNODENODETYPE": "MULTIMARKER", 
+                "MAPNODEPOSITIONX": "435", 
+                "MAPNODEPOSITIONY": "685", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTFROMNODE_ID": "1056298", 
+            "MAPLINESEGMENTREACTION": {
+                "MAPREACTIONREACTION_ID": "134232", 
+                "METABOLICMAP_ID": "1056289", 
+                "REACTIONABBREVATION": "FBP", 
+                "REACTIONDIRECTION": "Irreversible", 
+                "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+                "REACTIONISGLOBAL": "N", 
+                "REACTIONOFFICIALNAME": "fructose-bisphosphatase"
+            }, 
+            "MAPLINESEGMENTREACTION_ID": "1056287", 
+            "MAPLINESEGMENTTONODE": {
+                "MAPNODEISPRIMARY": "Y", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "415", 
+                "MAPNODELABELPOSITIONY": "665", 
+                "MAPNODENODETYPE": "MIDMARKER", 
+                "MAPNODEPOSITIONX": "435", 
+                "MAPNODEPOSITIONY": "665", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTTONODE_ID": "1056300", 
+            "MAPOBJECT_ID": "1056321", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPLINESEGMENTFROMNODE": {
+                "MAPNODEISPRIMARY": "Y", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "415", 
+                "MAPNODELABELPOSITIONY": "665", 
+                "MAPNODENODETYPE": "MIDMARKER", 
+                "MAPNODEPOSITIONX": "435", 
+                "MAPNODEPOSITIONY": "665", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTFROMNODE_ID": "1056300", 
+            "MAPLINESEGMENTREACTION": {
+                "MAPREACTIONREACTION_ID": "134232", 
+                "METABOLICMAP_ID": "1056289", 
+                "REACTIONABBREVATION": "FBP", 
+                "REACTIONDIRECTION": "Irreversible", 
+                "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+                "REACTIONISGLOBAL": "N", 
+                "REACTIONOFFICIALNAME": "fructose-bisphosphatase"
+            }, 
+            "MAPLINESEGMENTREACTION_ID": "1056287", 
+            "MAPLINESEGMENTTONODE": {
+                "MAPNODEISPRIMARY": "N", 
+                "MAPNODENODETYPE": "MULTIMARKER", 
+                "MAPNODEPOSITIONX": "435", 
+                "MAPNODEPOSITIONY": "645", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTTONODE_ID": "1056299", 
+            "MAPOBJECT_ID": "1056322", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPLINESEGMENTCONTROLPOINTS": [
+                [
+                    435.0, 
+                    749.03124237432849
+                ], 
+                [
+                    435.0, 
+                    704.20937271229855
+                ]
+            ], 
+            "MAPLINESEGMENTFROMNODE": {
+                "MAPNODECOMPARTMENT_ID": "1", 
+                "MAPNODEISPRIMARY": "N", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "305", 
+                "MAPNODELABELPOSITIONY": "765", 
+                "MAPNODEMOLECULE_ID": "33474", 
+                "MAPNODENODETYPE": "METABOLITE", 
+                "MAPNODEPOSITIONX": "335", 
+                "MAPNODEPOSITIONY": "765", 
+                "METABOLICMAP_ID": "1056289", 
+                "MOLECULEABBREVIATION": "h2o", 
+                "MOLECULEOFFICIALNAME": "H2O"
+            }, 
+            "MAPLINESEGMENTFROMNODE_ID": "1056279", 
+            "MAPLINESEGMENTREACTION": {
+                "MAPREACTIONREACTION_ID": "134232", 
+                "METABOLICMAP_ID": "1056289", 
+                "REACTIONABBREVATION": "FBP", 
+                "REACTIONDIRECTION": "Irreversible", 
+                "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+                "REACTIONISGLOBAL": "N", 
+                "REACTIONOFFICIALNAME": "fructose-bisphosphatase"
+            }, 
+            "MAPLINESEGMENTREACTION_ID": "1056287", 
+            "MAPLINESEGMENTTONODE": {
+                "MAPNODEISPRIMARY": "N", 
+                "MAPNODENODETYPE": "MULTIMARKER", 
+                "MAPNODEPOSITIONX": "435", 
+                "MAPNODEPOSITIONY": "685", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTTONODE_ID": "1056298", 
+            "MAPOBJECT_ID": "1056323", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPLINESEGMENTCONTROLPOINTS": [
+                [
+                    435.0, 
+                    783.488578017961
+                ], 
+                [
+                    435.0, 
+                    714.54657340538824
+                ]
+            ], 
+            "MAPLINESEGMENTFROMNODE": {
+                "MAPNODECOMPARTMENT_ID": "1", 
+                "MAPNODEISPRIMARY": "Y", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "475", 
+                "MAPNODELABELPOSITIONY": "865", 
+                "MAPNODEMOLECULE_ID": "34717", 
+                "MAPNODENODETYPE": "METABOLITE", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "865", 
+                "METABOLICMAP_ID": "1056289", 
+                "MOLECULEABBREVIATION": "fdp", 
+                "MOLECULEOFFICIALNAME": "D-Fructose 1,6-bisphosphate"
+            }, 
+            "MAPLINESEGMENTFROMNODE_ID": "1056270", 
+            "MAPLINESEGMENTREACTION": {
+                "MAPREACTIONREACTION_ID": "134232", 
+                "METABOLICMAP_ID": "1056289", 
+                "REACTIONABBREVATION": "FBP", 
+                "REACTIONDIRECTION": "Irreversible", 
+                "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+                "REACTIONISGLOBAL": "N", 
+                "REACTIONOFFICIALNAME": "fructose-bisphosphatase"
+            }, 
+            "MAPLINESEGMENTREACTION_ID": "1056287", 
+            "MAPLINESEGMENTTONODE": {
+                "MAPNODEISPRIMARY": "N", 
+                "MAPNODENODETYPE": "MULTIMARKER", 
+                "MAPNODEPOSITIONX": "435", 
+                "MAPNODEPOSITIONY": "685", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTTONODE_ID": "1056298", 
+            "MAPOBJECT_ID": "1056324", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPLINESEGMENTCONTROLPOINTS": [
+                [
+                    435.0, 
+                    626.93760813181154
+                ], 
+                [
+                    435.0, 
+                    584.79202710603852
+                ]
+            ], 
+            "MAPLINESEGMENTFROMNODE": {
+                "MAPNODEISPRIMARY": "N", 
+                "MAPNODENODETYPE": "MULTIMARKER", 
+                "MAPNODEPOSITIONX": "435", 
+                "MAPNODEPOSITIONY": "645", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTFROMNODE_ID": "1056299", 
+            "MAPLINESEGMENTREACTION": {
+                "MAPREACTIONREACTION_ID": "134232", 
+                "METABOLICMAP_ID": "1056289", 
+                "REACTIONABBREVATION": "FBP", 
+                "REACTIONDIRECTION": "Irreversible", 
+                "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+                "REACTIONISGLOBAL": "N", 
+                "REACTIONOFFICIALNAME": "fructose-bisphosphatase"
+            }, 
+            "MAPLINESEGMENTREACTION_ID": "1056287", 
+            "MAPLINESEGMENTTONODE": {
+                "MAPNODECOMPARTMENT_ID": "1", 
+                "MAPNODEISPRIMARY": "N", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "315", 
+                "MAPNODELABELPOSITIONY": "565", 
+                "MAPNODEMOLECULE_ID": "33499", 
+                "MAPNODENODETYPE": "METABOLITE", 
+                "MAPNODEPOSITIONX": "345", 
+                "MAPNODEPOSITIONY": "565", 
+                "METABOLICMAP_ID": "1056289", 
+                "MOLECULEABBREVIATION": "pi", 
+                "MOLECULEOFFICIALNAME": "Phosphate"
+            }, 
+            "MAPLINESEGMENTTONODE_ID": "1056280", 
+            "MAPOBJECT_ID": "1056325", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPLINESEGMENTCONTROLPOINTS": [
+                [
+                    435.0, 
+                    624.59779423689679
+                ], 
+                [
+                    435.0, 
+                    576.99264745632274
+                ]
+            ], 
+            "MAPLINESEGMENTFROMNODE": {
+                "MAPNODEISPRIMARY": "N", 
+                "MAPNODENODETYPE": "MULTIMARKER", 
+                "MAPNODEPOSITIONX": "435", 
+                "MAPNODEPOSITIONY": "645", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTFROMNODE_ID": "1056299", 
+            "MAPLINESEGMENTREACTION": {
+                "MAPREACTIONREACTION_ID": "134232", 
+                "METABOLICMAP_ID": "1056289", 
+                "REACTIONABBREVATION": "FBP", 
+                "REACTIONDIRECTION": "Irreversible", 
+                "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+                "REACTIONISGLOBAL": "N", 
+                "REACTIONOFFICIALNAME": "fructose-bisphosphatase"
+            }, 
+            "MAPLINESEGMENTREACTION_ID": "1056287", 
+            "MAPLINESEGMENTTONODE": {
+                "MAPNODECOMPARTMENT_ID": "1", 
+                "MAPNODEISPRIMARY": "Y", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "545", 
+                "MAPNODELABELPOSITIONY": "495", 
+                "MAPNODEMOLECULE_ID": "33795", 
+                "MAPNODENODETYPE": "METABOLITE", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "535", 
+                "METABOLICMAP_ID": "1056289", 
+                "MOLECULEABBREVIATION": "f6p", 
+                "MOLECULEOFFICIALNAME": "D-Fructose 6-phosphate"
+            }, 
+            "MAPLINESEGMENTTONODE_ID": "1056265", 
+            "MAPOBJECT_ID": "1056326", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPLINESEGMENTCONTROLPOINTS": [
+                [
+                    515.0, 
+                    879.25
+                ], 
+                [
+                    515.0, 
+                    912.5
+                ]
+            ], 
+            "MAPLINESEGMENTFROMNODE": {
+                "MAPNODECOMPARTMENT_ID": "1", 
+                "MAPNODEISPRIMARY": "Y", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "475", 
+                "MAPNODELABELPOSITIONY": "865", 
+                "MAPNODEMOLECULE_ID": "34717", 
+                "MAPNODENODETYPE": "METABOLITE", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "865", 
+                "METABOLICMAP_ID": "1056289", 
+                "MOLECULEABBREVIATION": "fdp", 
+                "MOLECULEOFFICIALNAME": "D-Fructose 1,6-bisphosphate"
+            }, 
+            "MAPLINESEGMENTFROMNODE_ID": "1056270", 
+            "MAPLINESEGMENTREACTION": {
+                "MAPREACTIONREACTION_ID": "134019", 
+                "METABOLICMAP_ID": "1056289", 
+                "REACTIONABBREVATION": "FBA", 
+                "REACTIONDIRECTION": "Reversible", 
+                "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+                "REACTIONISGLOBAL": "N", 
+                "REACTIONOFFICIALNAME": "fructose-bisphosphate aldolase"
+            }, 
+            "MAPLINESEGMENTREACTION_ID": "1056288", 
+            "MAPLINESEGMENTTONODE": {
+                "MAPNODEISPRIMARY": "Y", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "485", 
+                "MAPNODELABELPOSITIONY": "960", 
+                "MAPNODENODETYPE": "MIDMARKER", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "960", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTTONODE_ID": "1056301", 
+            "MAPOBJECT_ID": "1056327", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPLINESEGMENTFROMNODE": {
+                "MAPNODEISPRIMARY": "Y", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "485", 
+                "MAPNODELABELPOSITIONY": "960", 
+                "MAPNODENODETYPE": "MIDMARKER", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "960", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTFROMNODE_ID": "1056301", 
+            "MAPLINESEGMENTREACTION": {
+                "MAPREACTIONREACTION_ID": "134019", 
+                "METABOLICMAP_ID": "1056289", 
+                "REACTIONABBREVATION": "FBA", 
+                "REACTIONDIRECTION": "Reversible", 
+                "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+                "REACTIONISGLOBAL": "N", 
+                "REACTIONOFFICIALNAME": "fructose-bisphosphate aldolase"
+            }, 
+            "MAPLINESEGMENTREACTION_ID": "1056288", 
+            "MAPLINESEGMENTTONODE": {
+                "MAPNODEISPRIMARY": "N", 
+                "MAPNODENODETYPE": "MULTIMARKER", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "980", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTTONODE_ID": "1056302", 
+            "MAPOBJECT_ID": "1056328", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPLINESEGMENTCONTROLPOINTS": [
+                [
+                    515.0, 
+                    995.0
+                ], 
+                [
+                    515.0, 
+                    1030.0
+                ]
+            ], 
+            "MAPLINESEGMENTFROMNODE": {
+                "MAPNODEISPRIMARY": "N", 
+                "MAPNODENODETYPE": "MULTIMARKER", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "980", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTFROMNODE_ID": "1056302", 
+            "MAPLINESEGMENTREACTION": {
+                "MAPREACTIONREACTION_ID": "134019", 
+                "METABOLICMAP_ID": "1056289", 
+                "REACTIONABBREVATION": "FBA", 
+                "REACTIONDIRECTION": "Reversible", 
+                "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+                "REACTIONISGLOBAL": "N", 
+                "REACTIONOFFICIALNAME": "fructose-bisphosphate aldolase"
+            }, 
+            "MAPLINESEGMENTREACTION_ID": "1056288", 
+            "MAPLINESEGMENTTONODE": {
+                "MAPNODECOMPARTMENT_ID": "1", 
+                "MAPNODEISPRIMARY": "Y", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "555", 
+                "MAPNODELABELPOSITIONY": "1080", 
+                "MAPNODEMOLECULE_ID": "35637", 
+                "MAPNODENODETYPE": "METABOLITE", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "1080", 
+                "METABOLICMAP_ID": "1056289", 
+                "MOLECULEABBREVIATION": "g3p", 
+                "MOLECULEOFFICIALNAME": "Glyceraldehyde 3-phosphate"
+            }, 
+            "MAPLINESEGMENTTONODE_ID": "1056267", 
+            "MAPOBJECT_ID": "1056329", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPLINESEGMENTCONTROLPOINTS": [
+                [
+                    515.0, 
+                    1012.2063658303758
+                ], 
+                [
+                    515.0, 
+                    1087.3545527679194
+                ]
+            ], 
+            "MAPLINESEGMENTFROMNODE": {
+                "MAPNODEISPRIMARY": "N", 
+                "MAPNODENODETYPE": "MULTIMARKER", 
+                "MAPNODEPOSITIONX": "515", 
+                "MAPNODEPOSITIONY": "980", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTFROMNODE_ID": "1056302", 
+            "MAPLINESEGMENTREACTION": {
+                "MAPREACTIONREACTION_ID": "134019", 
+                "METABOLICMAP_ID": "1056289", 
+                "REACTIONABBREVATION": "FBA", 
+                "REACTIONDIRECTION": "Reversible", 
+                "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+                "REACTIONISGLOBAL": "N", 
+                "REACTIONOFFICIALNAME": "fructose-bisphosphate aldolase"
+            }, 
+            "MAPLINESEGMENTREACTION_ID": "1056288", 
+            "MAPLINESEGMENTTONODE": {
+                "MAPNODECOMPARTMENT_ID": "1", 
+                "MAPNODEISPRIMARY": "Y", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "295", 
+                "MAPNODELABELPOSITIONY": "1070", 
+                "MAPNODEMOLECULE_ID": "33898", 
+                "MAPNODENODETYPE": "METABOLITE", 
+                "MAPNODEPOSITIONX": "325", 
+                "MAPNODEPOSITIONY": "1080", 
+                "METABOLICMAP_ID": "1056289", 
+                "MOLECULEABBREVIATION": "dhap", 
+                "MOLECULEOFFICIALNAME": "Dihydroxyacetone phosphate"
+            }, 
+            "MAPLINESEGMENTTONODE_ID": "1056266", 
+            "MAPOBJECT_ID": "1056330", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPLINESEGMENTCONTROLPOINTS": [
+                [
+                    239.5, 
+                    60.0
+                ], 
+                [
+                    285.0, 
+                    60.0
+                ]
+            ], 
+            "MAPLINESEGMENTFROMNODE": {
+                "MAPNODECOMPARTMENT_ID": "3", 
+                "MAPNODEISPRIMARY": "Y", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "220", 
+                "MAPNODELABELPOSITIONY": "30", 
+                "MAPNODEMOLECULE_ID": "33582", 
+                "MAPNODENODETYPE": "METABOLITE", 
+                "MAPNODEPOSITIONX": "220", 
+                "MAPNODEPOSITIONY": "60", 
+                "METABOLICMAP_ID": "1056289", 
+                "MOLECULEABBREVIATION": "glc-D", 
+                "MOLECULEOFFICIALNAME": "D-Glucose"
+            }, 
+            "MAPLINESEGMENTFROMNODE_ID": "1056332", 
+            "MAPLINESEGMENTREACTION": {
+                "MAPREACTIONREACTION_ID": "217149", 
+                "METABOLICMAP_ID": "1056289", 
+                "REACTIONABBREVATION": "GLCt1", 
+                "REACTIONDIRECTION": "Irreversible", 
+                "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+                "REACTIONISGLOBAL": "N", 
+                "REACTIONOFFICIALNAME": "glucose transport (uniport)"
+            }, 
+            "MAPLINESEGMENTREACTION_ID": "1056335", 
+            "MAPLINESEGMENTTONODE": {
+                "MAPNODEISPRIMARY": "Y", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "350", 
+                "MAPNODELABELPOSITIONY": "40", 
+                "MAPNODENODETYPE": "MIDMARKER", 
+                "MAPNODEPOSITIONX": "350", 
+                "MAPNODEPOSITIONY": "60", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTTONODE_ID": "1056333", 
+            "MAPOBJECT_ID": "1056334", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPLINESEGMENTCONTROLPOINTS": [
+                [
+                    374.89999999999998, 
+                    60.0
+                ], 
+                [
+                    433.0, 
+                    60.0
+                ]
+            ], 
+            "MAPLINESEGMENTFROMNODE": {
+                "MAPNODEISPRIMARY": "Y", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "350", 
+                "MAPNODELABELPOSITIONY": "40", 
+                "MAPNODENODETYPE": "MIDMARKER", 
+                "MAPNODEPOSITIONX": "350", 
+                "MAPNODEPOSITIONY": "60", 
+                "METABOLICMAP_ID": "1056289"
+            }, 
+            "MAPLINESEGMENTFROMNODE_ID": "1056333", 
+            "MAPLINESEGMENTREACTION": {
+                "MAPREACTIONREACTION_ID": "217149", 
+                "METABOLICMAP_ID": "1056289", 
+                "REACTIONABBREVATION": "GLCt1", 
+                "REACTIONDIRECTION": "Irreversible", 
+                "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+                "REACTIONISGLOBAL": "N", 
+                "REACTIONOFFICIALNAME": "glucose transport (uniport)"
+            }, 
+            "MAPLINESEGMENTREACTION_ID": "1056335", 
+            "MAPLINESEGMENTTONODE": {
+                "MAPNODECOMPARTMENT_ID": "1", 
+                "MAPNODEISPRIMARY": "Y", 
+                "MAPNODELABELANCHOR": "AUTO", 
+                "MAPNODELABELPOSITIONX": "556", 
+                "MAPNODELABELPOSITIONY": "60", 
+                "MAPNODEMOLECULE_ID": "33582", 
+                "MAPNODENODETYPE": "METABOLITE", 
+                "MAPNODEPOSITIONX": "516", 
+                "MAPNODEPOSITIONY": "60", 
+                "METABOLICMAP_ID": "1056289", 
+                "MOLECULEABBREVIATION": "glc-D", 
+                "MOLECULEOFFICIALNAME": "D-Glucose"
+            }, 
+            "MAPLINESEGMENTTONODE_ID": "1056276", 
+            "MAPOBJECT_ID": "1056331", 
+            "METABOLICMAP_ID": "1056289"
+        }
+    ], 
+    "MAPNODE": [
+        {
+            "MAPNODECOMPARTMENT_ID": "1", 
+            "MAPNODEISPRIMARY": "Y", 
+            "MAPNODELABELANCHOR": "AUTO", 
+            "MAPNODELABELPOSITIONX": "295", 
+            "MAPNODELABELPOSITIONY": "1070", 
+            "MAPNODEMOLECULE_ID": "33898", 
+            "MAPNODENODETYPE": "METABOLITE", 
+            "MAPNODEPOSITIONX": "325", 
+            "MAPNODEPOSITIONY": "1080", 
+            "MAPOBJECT_ID": "1056266", 
+            "METABOLICMAP_ID": "1056289", 
+            "MOLECULEABBREVIATION": "dhap", 
+            "MOLECULEOFFICIALNAME": "Dihydroxyacetone phosphate"
+        }, 
+        {
+            "MAPNODECOMPARTMENT_ID": "1", 
+            "MAPNODEISPRIMARY": "N", 
+            "MAPNODELABELANCHOR": "AUTO", 
+            "MAPNODELABELPOSITIONX": "645", 
+            "MAPNODELABELPOSITIONY": "285", 
+            "MAPNODEMOLECULE_ID": "33496", 
+            "MAPNODENODETYPE": "METABOLITE", 
+            "MAPNODEPOSITIONX": "615", 
+            "MAPNODEPOSITIONY": "285", 
+            "MAPOBJECT_ID": "1056277", 
+            "METABOLICMAP_ID": "1056289", 
+            "MOLECULEABBREVIATION": "adp", 
+            "MOLECULEOFFICIALNAME": "ADP"
+        }, 
+        {
+            "MAPNODECOMPARTMENT_ID": "1", 
+            "MAPNODEISPRIMARY": "N", 
+            "MAPNODELABELANCHOR": "AUTO", 
+            "MAPNODELABELPOSITIONX": "595", 
+            "MAPNODELABELPOSITIONY": "815", 
+            "MAPNODEMOLECULE_ID": "33778", 
+            "MAPNODENODETYPE": "METABOLITE", 
+            "MAPNODEPOSITIONX": "565", 
+            "MAPNODEPOSITIONY": "815", 
+            "MAPOBJECT_ID": "1056271", 
+            "METABOLICMAP_ID": "1056289", 
+            "MOLECULEABBREVIATION": "h", 
+            "MOLECULEOFFICIALNAME": "H+"
+        }, 
+        {
+            "MAPNODECOMPARTMENT_ID": "1", 
+            "MAPNODEISPRIMARY": "Y", 
+            "MAPNODELABELANCHOR": "AUTO", 
+            "MAPNODELABELPOSITIONX": "555", 
+            "MAPNODELABELPOSITIONY": "1080", 
+            "MAPNODEMOLECULE_ID": "35637", 
+            "MAPNODENODETYPE": "METABOLITE", 
+            "MAPNODEPOSITIONX": "515", 
+            "MAPNODEPOSITIONY": "1080", 
+            "MAPOBJECT_ID": "1056267", 
+            "METABOLICMAP_ID": "1056289", 
+            "MOLECULEABBREVIATION": "g3p", 
+            "MOLECULEOFFICIALNAME": "Glyceraldehyde 3-phosphate"
+        }, 
+        {
+            "MAPNODECOMPARTMENT_ID": "1", 
+            "MAPNODEISPRIMARY": "N", 
+            "MAPNODELABELANCHOR": "AUTO", 
+            "MAPNODELABELPOSITIONX": "585", 
+            "MAPNODELABELPOSITIONY": "615", 
+            "MAPNODEMOLECULE_ID": "33477", 
+            "MAPNODENODETYPE": "METABOLITE", 
+            "MAPNODEPOSITIONX": "555", 
+            "MAPNODEPOSITIONY": "615", 
+            "MAPOBJECT_ID": "1056268", 
+            "METABOLICMAP_ID": "1056289", 
+            "MOLECULEABBREVIATION": "atp", 
+            "MOLECULEOFFICIALNAME": "ATP"
+        }, 
+        {
+            "MAPNODECOMPARTMENT_ID": "1", 
+            "MAPNODEISPRIMARY": "N", 
+            "MAPNODELABELANCHOR": "AUTO", 
+            "MAPNODELABELPOSITIONX": "615", 
+            "MAPNODELABELPOSITIONY": "765", 
+            "MAPNODEMOLECULE_ID": "33496", 
+            "MAPNODENODETYPE": "METABOLITE", 
+            "MAPNODEPOSITIONX": "585", 
+            "MAPNODEPOSITIONY": "765", 
+            "MAPOBJECT_ID": "1056269", 
+            "METABOLICMAP_ID": "1056289", 
+            "MOLECULEABBREVIATION": "adp", 
+            "MOLECULEOFFICIALNAME": "ADP"
+        }, 
+        {
+            "MAPNODECOMPARTMENT_ID": "1", 
+            "MAPNODEISPRIMARY": "N", 
+            "MAPNODELABELANCHOR": "AUTO", 
+            "MAPNODELABELPOSITIONX": "615", 
+            "MAPNODELABELPOSITIONY": "115", 
+            "MAPNODEMOLECULE_ID": "33477", 
+            "MAPNODENODETYPE": "METABOLITE", 
+            "MAPNODEPOSITIONX": "585", 
+            "MAPNODEPOSITIONY": "115", 
+            "MAPOBJECT_ID": "1056275", 
+            "METABOLICMAP_ID": "1056289", 
+            "MOLECULEABBREVIATION": "atp", 
+            "MOLECULEOFFICIALNAME": "ATP"
+        }, 
+        {
+            "MAPNODECOMPARTMENT_ID": "1", 
+            "MAPNODEISPRIMARY": "Y", 
+            "MAPNODELABELANCHOR": "AUTO", 
+            "MAPNODELABELPOSITIONX": "556", 
+            "MAPNODELABELPOSITIONY": "60", 
+            "MAPNODEMOLECULE_ID": "33582", 
+            "MAPNODENODETYPE": "METABOLITE", 
+            "MAPNODEPOSITIONX": "516", 
+            "MAPNODEPOSITIONY": "60", 
+            "MAPOBJECT_ID": "1056276", 
+            "METABOLICMAP_ID": "1056289", 
+            "MOLECULEABBREVIATION": "glc-D", 
+            "MOLECULEOFFICIALNAME": "D-Glucose"
+        }, 
+        {
+            "MAPNODECOMPARTMENT_ID": "1", 
+            "MAPNODEISPRIMARY": "N", 
+            "MAPNODELABELANCHOR": "AUTO", 
+            "MAPNODELABELPOSITIONX": "315", 
+            "MAPNODELABELPOSITIONY": "565", 
+            "MAPNODEMOLECULE_ID": "33499", 
+            "MAPNODENODETYPE": "METABOLITE", 
+            "MAPNODEPOSITIONX": "345", 
+            "MAPNODEPOSITIONY": "565", 
+            "MAPOBJECT_ID": "1056280", 
+            "METABOLICMAP_ID": "1056289", 
+            "MOLECULEABBREVIATION": "pi", 
+            "MOLECULEOFFICIALNAME": "Phosphate"
+        }, 
+        {
+            "MAPNODECOMPARTMENT_ID": "1", 
+            "MAPNODEISPRIMARY": "Y", 
+            "MAPNODELABELANCHOR": "AUTO", 
+            "MAPNODELABELPOSITIONX": "475", 
+            "MAPNODELABELPOSITIONY": "865", 
+            "MAPNODEMOLECULE_ID": "34717", 
+            "MAPNODENODETYPE": "METABOLITE", 
+            "MAPNODEPOSITIONX": "515", 
+            "MAPNODEPOSITIONY": "865", 
+            "MAPOBJECT_ID": "1056270", 
+            "METABOLICMAP_ID": "1056289", 
+            "MOLECULEABBREVIATION": "fdp", 
+            "MOLECULEOFFICIALNAME": "D-Fructose 1,6-bisphosphate"
+        }, 
+        {
+            "MAPNODECOMPARTMENT_ID": "1", 
+            "MAPNODEISPRIMARY": "Y", 
+            "MAPNODELABELANCHOR": "AUTO", 
+            "MAPNODELABELPOSITIONX": "475", 
+            "MAPNODELABELPOSITIONY": "345", 
+            "MAPNODEMOLECULE_ID": "36977", 
+            "MAPNODENODETYPE": "METABOLITE", 
+            "MAPNODEPOSITIONX": "515", 
+            "MAPNODEPOSITIONY": "355", 
+            "MAPOBJECT_ID": "1056264", 
+            "METABOLICMAP_ID": "1056289", 
+            "MOLECULEABBREVIATION": "g6p", 
+            "MOLECULEOFFICIALNAME": "D-Glucose 6-phosphate"
+        }, 
+        {
+            "MAPNODECOMPARTMENT_ID": "1", 
+            "MAPNODEISPRIMARY": "N", 
+            "MAPNODELABELANCHOR": "AUTO", 
+            "MAPNODELABELPOSITIONX": "305", 
+            "MAPNODELABELPOSITIONY": "765", 
+            "MAPNODEMOLECULE_ID": "33474", 
+            "MAPNODENODETYPE": "METABOLITE", 
+            "MAPNODEPOSITIONX": "335", 
+            "MAPNODEPOSITIONY": "765", 
+            "MAPOBJECT_ID": "1056279", 
+            "METABOLICMAP_ID": "1056289", 
+            "MOLECULEABBREVIATION": "h2o", 
+            "MOLECULEOFFICIALNAME": "H2O"
+        }, 
+        {
+            "MAPNODECOMPARTMENT_ID": "1", 
+            "MAPNODEISPRIMARY": "Y", 
+            "MAPNODELABELANCHOR": "AUTO", 
+            "MAPNODELABELPOSITIONX": "545", 
+            "MAPNODELABELPOSITIONY": "495", 
+            "MAPNODEMOLECULE_ID": "33795", 
+            "MAPNODENODETYPE": "METABOLITE", 
+            "MAPNODEPOSITIONX": "515", 
+            "MAPNODEPOSITIONY": "535", 
+            "MAPOBJECT_ID": "1056265", 
+            "METABOLICMAP_ID": "1056289", 
+            "MOLECULEABBREVIATION": "f6p", 
+            "MOLECULEOFFICIALNAME": "D-Fructose 6-phosphate"
+        }, 
+        {
+            "MAPNODECOMPARTMENT_ID": "1", 
+            "MAPNODEISPRIMARY": "N", 
+            "MAPNODELABELANCHOR": "AUTO", 
+            "MAPNODELABELPOSITIONX": "645", 
+            "MAPNODELABELPOSITIONY": "215", 
+            "MAPNODEMOLECULE_ID": "33778", 
+            "MAPNODENODETYPE": "METABOLITE", 
+            "MAPNODEPOSITIONX": "615", 
+            "MAPNODEPOSITIONY": "215", 
+            "MAPOBJECT_ID": "1056278", 
+            "METABOLICMAP_ID": "1056289", 
+            "MOLECULEABBREVIATION": "h", 
+            "MOLECULEOFFICIALNAME": "H+"
+        }, 
+        {
+            "MAPNODEISPRIMARY": "Y", 
+            "MAPNODELABELANCHOR": "AUTO", 
+            "MAPNODELABELPOSITIONX": "475", 
+            "MAPNODELABELPOSITIONY": "445", 
+            "MAPNODENODETYPE": "MIDMARKER", 
+            "MAPNODEPOSITIONX": "515", 
+            "MAPNODEPOSITIONY": "445", 
+            "MAPOBJECT_ID": "1056290", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPNODEISPRIMARY": "Y", 
+            "MAPNODELABELANCHOR": "AUTO", 
+            "MAPNODELABELPOSITIONX": "425", 
+            "MAPNODELABELPOSITIONY": "1110", 
+            "MAPNODENODETYPE": "MIDMARKER", 
+            "MAPNODEPOSITIONX": "425", 
+            "MAPNODEPOSITIONY": "1080", 
+            "MAPOBJECT_ID": "1056291", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPNODEISPRIMARY": "Y", 
+            "MAPNODELABELANCHOR": "AUTO", 
+            "MAPNODELABELPOSITIONX": "545", 
+            "MAPNODELABELPOSITIONY": "685", 
+            "MAPNODENODETYPE": "MIDMARKER", 
+            "MAPNODEPOSITIONX": "515", 
+            "MAPNODEPOSITIONY": "685", 
+            "MAPOBJECT_ID": "1056292", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPNODEISPRIMARY": "N", 
+            "MAPNODENODETYPE": "MULTIMARKER", 
+            "MAPNODEPOSITIONX": "515", 
+            "MAPNODEPOSITIONY": "665", 
+            "MAPOBJECT_ID": "1056293", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPNODEISPRIMARY": "N", 
+            "MAPNODENODETYPE": "MULTIMARKER", 
+            "MAPNODEPOSITIONX": "515", 
+            "MAPNODEPOSITIONY": "725", 
+            "MAPOBJECT_ID": "1056294", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPNODEISPRIMARY": "Y", 
+            "MAPNODELABELANCHOR": "AUTO", 
+            "MAPNODELABELPOSITIONX": "485", 
+            "MAPNODELABELPOSITIONY": "185", 
+            "MAPNODENODETYPE": "MIDMARKER", 
+            "MAPNODEPOSITIONX": "515", 
+            "MAPNODEPOSITIONY": "185", 
+            "MAPOBJECT_ID": "1056295", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPNODEISPRIMARY": "N", 
+            "MAPNODENODETYPE": "MULTIMARKER", 
+            "MAPNODEPOSITIONX": "515", 
+            "MAPNODEPOSITIONY": "165", 
+            "MAPOBJECT_ID": "1056296", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPNODEISPRIMARY": "N", 
+            "MAPNODENODETYPE": "MULTIMARKER", 
+            "MAPNODEPOSITIONX": "515", 
+            "MAPNODEPOSITIONY": "205", 
+            "MAPOBJECT_ID": "1056297", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPNODEISPRIMARY": "N", 
+            "MAPNODENODETYPE": "MULTIMARKER", 
+            "MAPNODEPOSITIONX": "435", 
+            "MAPNODEPOSITIONY": "685", 
+            "MAPOBJECT_ID": "1056298", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPNODEISPRIMARY": "N", 
+            "MAPNODENODETYPE": "MULTIMARKER", 
+            "MAPNODEPOSITIONX": "435", 
+            "MAPNODEPOSITIONY": "645", 
+            "MAPOBJECT_ID": "1056299", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPNODEISPRIMARY": "Y", 
+            "MAPNODELABELANCHOR": "AUTO", 
+            "MAPNODELABELPOSITIONX": "415", 
+            "MAPNODELABELPOSITIONY": "665", 
+            "MAPNODENODETYPE": "MIDMARKER", 
+            "MAPNODEPOSITIONX": "435", 
+            "MAPNODEPOSITIONY": "665", 
+            "MAPOBJECT_ID": "1056300", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPNODEISPRIMARY": "Y", 
+            "MAPNODELABELANCHOR": "AUTO", 
+            "MAPNODELABELPOSITIONX": "485", 
+            "MAPNODELABELPOSITIONY": "960", 
+            "MAPNODENODETYPE": "MIDMARKER", 
+            "MAPNODEPOSITIONX": "515", 
+            "MAPNODEPOSITIONY": "960", 
+            "MAPOBJECT_ID": "1056301", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPNODEISPRIMARY": "N", 
+            "MAPNODENODETYPE": "MULTIMARKER", 
+            "MAPNODEPOSITIONX": "515", 
+            "MAPNODEPOSITIONY": "980", 
+            "MAPOBJECT_ID": "1056302", 
+            "METABOLICMAP_ID": "1056289"
+        }, 
+        {
+            "MAPNODECOMPARTMENT_ID": "3", 
+            "MAPNODEISPRIMARY": "Y", 
+            "MAPNODELABELANCHOR": "AUTO", 
+            "MAPNODELABELPOSITIONX": "220", 
+            "MAPNODELABELPOSITIONY": "30", 
+            "MAPNODEMOLECULE_ID": "33582", 
+            "MAPNODENODETYPE": "METABOLITE", 
+            "MAPNODEPOSITIONX": "220", 
+            "MAPNODEPOSITIONY": "60", 
+            "MAPOBJECT_ID": "1056332", 
+            "METABOLICMAP_ID": "1056289", 
+            "MOLECULEABBREVIATION": "glc-D", 
+            "MOLECULEOFFICIALNAME": "D-Glucose"
+        }, 
+        {
+            "MAPNODEISPRIMARY": "Y", 
+            "MAPNODELABELANCHOR": "AUTO", 
+            "MAPNODELABELPOSITIONX": "350", 
+            "MAPNODELABELPOSITIONY": "40", 
+            "MAPNODENODETYPE": "MIDMARKER", 
+            "MAPNODEPOSITIONX": "350", 
+            "MAPNODEPOSITIONY": "60", 
+            "MAPOBJECT_ID": "1056333", 
+            "METABOLICMAP_ID": "1056289"
+        }
+    ], 
+    "MAPREACTION": [
+        {
+            "MAPOBJECT_ID": "1056281", 
+            "MAPREACTIONREACTION_ID": "134518", 
+            "METABOLICMAP_ID": "1056289", 
+            "REACTIONABBREVATION": "PGI", 
+            "REACTIONDIRECTION": "Reversible", 
+            "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+            "REACTIONISGLOBAL": "N", 
+            "REACTIONOFFICIALNAME": "glucose-6-phosphate isomerase"
+        }, 
+        {
+            "MAPOBJECT_ID": "1056282", 
+            "MAPREACTIONREACTION_ID": "134757", 
+            "METABOLICMAP_ID": "1056289", 
+            "REACTIONABBREVATION": "TPI", 
+            "REACTIONDIRECTION": "Reversible", 
+            "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+            "REACTIONISGLOBAL": "N", 
+            "REACTIONOFFICIALNAME": "triose-phosphate isomerase"
+        }, 
+        {
+            "MAPOBJECT_ID": "1056283", 
+            "MAPREACTIONREACTION_ID": "134377", 
+            "METABOLICMAP_ID": "1056289", 
+            "REACTIONABBREVATION": "PFK", 
+            "REACTIONDIRECTION": "Irreversible", 
+            "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+            "REACTIONISGLOBAL": "N", 
+            "REACTIONOFFICIALNAME": "phosphofructokinase"
+        }, 
+        {
+            "MAPOBJECT_ID": "1056286", 
+            "MAPREACTIONREACTION_ID": "134052", 
+            "METABOLICMAP_ID": "1056289", 
+            "REACTIONABBREVATION": "HEX1", 
+            "REACTIONDIRECTION": "Irreversible", 
+            "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+            "REACTIONISGLOBAL": "N", 
+            "REACTIONOFFICIALNAME": "hexokinase (D-glucose:ATP)"
+        }, 
+        {
+            "MAPOBJECT_ID": "1056287", 
+            "MAPREACTIONREACTION_ID": "134232", 
+            "METABOLICMAP_ID": "1056289", 
+            "REACTIONABBREVATION": "FBP", 
+            "REACTIONDIRECTION": "Irreversible", 
+            "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+            "REACTIONISGLOBAL": "N", 
+            "REACTIONOFFICIALNAME": "fructose-bisphosphatase"
+        }, 
+        {
+            "MAPOBJECT_ID": "1056288", 
+            "MAPREACTIONREACTION_ID": "134019", 
+            "METABOLICMAP_ID": "1056289", 
+            "REACTIONABBREVATION": "FBA", 
+            "REACTIONDIRECTION": "Reversible", 
+            "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+            "REACTIONISGLOBAL": "N", 
+            "REACTIONOFFICIALNAME": "fructose-bisphosphate aldolase"
+        }, 
+        {
+            "MAPOBJECT_ID": "1056335", 
+            "MAPREACTIONREACTION_ID": "217149", 
+            "METABOLICMAP_ID": "1056289", 
+            "REACTIONABBREVATION": "GLCt1", 
+            "REACTIONDIRECTION": "Irreversible", 
+            "REACTIONDISCRIMINATOR": "INTRASYSTEM", 
+            "REACTIONISGLOBAL": "N", 
+            "REACTIONOFFICIALNAME": "glucose transport (uniport)"
+        }
+    ]
+}
