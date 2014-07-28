@@ -86,8 +86,6 @@ def save_map(filename, out_directory, model_name):
     parse_segments(segments, reactions, nodes)
         
     # do the reactions
-
-    # look out for r2075900 in iJO1366_central_metabolism
     reactions = parse_reactions(reactions, model, nodes)
 
     # do the text labels
@@ -103,10 +101,8 @@ def save_map(filename, out_directory, model_name):
     # out = translate_everything(out)
     
     # for export, only keep the necessary stuff
-    node_keys_to_keep = ['node_type', 'x', 'y',
-                         'name', 'bigg_id',
-                         'label_x', 'label_y',
-                         'node_is_primary', 'connected_segments']
+    node_keys_to_keep = ['node_type', 'x', 'y', 'name', 'bigg_id', 'label_x',
+                         'label_y', 'node_is_primary', 'connected_segments']
     segment_keys_to_keep = ['from_node_id', 'to_node_id', 'b1', 'b2']
     reaction_keys_to_keep = ['segments', 'name', 'reversibility',
                              'bigg_id', 'label_x', 'label_y', 'metabolites']
@@ -200,11 +196,20 @@ def parse_segments(segments, reactions, nodes):
     segment_id = 0
     for segment in segments:
         # get the reaction
-        reaction_id = str(segment['MAPLINESEGMENTREACTION']['MAPREACTIONREACTION_ID'])
-        reaction = [a for a in reactions if a['MAPREACTIONREACTION_ID']==reaction_id]
+        reaction_id = str(segment['MAPLINESEGMENTREACTION_ID'])
+        reaction = [a for a in reactions if str(a['MAPOBJECT_ID'])==reaction_id]
+
         if len(reaction) > 1: reaction = reaction[0] # raise Exception('Too many matches')
         else: reaction = reaction[0]
             
+        # look out for r 2075901 in iJO1366_central_metabolism
+        # print reaction['MAPOBJECT_ID']
+        # if int(reaction['MAPOBJECT_ID']) == 2075901:
+        #     print segment
+        #     print
+        #     print [x for x in reactions if int(x['MAPOBJECT_ID']) in [2075901, 2075903]]
+        #     import ipdb; ipdb.set_trace()
+                    
         # get the nodes
         from_node_id = check_and_add_to_nodes(nodes, segment['MAPLINESEGMENTFROMNODE_ID'],
                                               str(segment_id), str(reaction['MAPOBJECT_ID']))
@@ -233,11 +238,11 @@ def parse_reactions(reactions, model, nodes):
                        cast=id_for_new_id_style, require=True)
         try_assignment(reaction, 'MAPOBJECT_ID', 'id',
                        cast=str, require=True)
-        
+            
         # get reaction label position. set to the midmarker
         try:
-            connected_nodes = set(reduce(lambda x,y: x + [y['to_node_id'], y['from_node_id']],
-                                     reaction['segments'].itervalues(), []))
+            connected_nodes = set(reduce(lambda x, y: x + [y['to_node_id'], y['from_node_id']],
+                                         reaction['segments'].itervalues(), []))
         except KeyError:
             continue
         
@@ -258,6 +263,7 @@ def parse_reactions(reactions, model, nodes):
         reaction['reversibility']  = (cobra_reaction.lower_bound < 0)
         # get the metabolites
         reaction['metabolites'] = {k.id: {"coefficient": int(v)} for k, v in cobra_reaction._metabolites.iteritems()}
+        
     # take out the reactions without segments
     return {r['id']: r for r in reactions if 'segments' in r}
 
