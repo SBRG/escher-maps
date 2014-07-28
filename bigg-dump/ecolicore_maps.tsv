@@ -1,0 +1,17 @@
+	path	score	n_metabolites	n_reactions
+0	processed/1525727.json.gz	1.0	97	17
+1	processed/1091532.json.gz	1.0	92	19
+2	processed/1522944.json.gz	1.0	67	13
+3	processed/1954054.json.gz	1.0	53	10
+4	processed/1588102.json.gz	1.0	42	13
+5	processed/1525619.json.gz	1.0	40	8
+6	processed/517651.json.gz	1.0	40	6
+7	processed/1216050.json.gz	1.0	33	7
+8	processed/1215966.json.gz	1.0	23	4
+9	processed/1601031.json.gz	1.0	20	4
+10	processed/1218747.json.gz	1.0	19	3
+11	processed/1604410.json.gz	1.0	16	2
+12	processed/1878439.json.gz	1.0	9	1
+13	processed/1878458.json.gz	1.0	9	1
+14	processed/760586.json.gz	1.0	9	1
+15	processed/1878477.json.gz	1.0	7	1
