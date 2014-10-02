@@ -135,7 +135,7 @@ def save_map(filename, out_directory, model_name):
     out['membranes'] = []
         
     # make sure it conforms
-    conforms_to_spec(out)
+    # conforms_to_spec(out)
     
     with open(out_file, 'w') as f: json.dump(out, f, allow_nan=False)
 
