@@ -62,8 +62,9 @@ def main():
                 continue
             if id_for_new_id_style(an_id) in ids:
                 num_matches = num_matches + 1
-        # quit if not 100%
-        if num_matches < len(reactions): continue
+        # quit if not > 90%
+        frac = 0.9
+        if num_matches < frac*len(reactions): continue
         scores.append((join(search_dir, path),
                        float(num_matches) / len(reactions),
                        met_count, reaction_count))

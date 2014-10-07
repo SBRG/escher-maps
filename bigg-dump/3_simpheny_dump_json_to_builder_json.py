@@ -14,6 +14,8 @@ import logging
 import pandas as pd
 import cobra
 import cPickle as pickle
+import jsonschema
+from urllib2 import urlopen
 
 from check_spec import conforms_to_spec
 from theseus import id_for_new_id_style, load_model
@@ -105,7 +107,8 @@ def save_map(filename, out_directory, model_name):
                          'label_y', 'node_is_primary', 'connected_segments']
     segment_keys_to_keep = ['from_node_id', 'to_node_id', 'b1', 'b2']
     reaction_keys_to_keep = ['segments', 'name', 'reversibility',
-                             'bigg_id', 'label_x', 'label_y', 'metabolites']
+                             'bigg_id', 'label_x', 'label_y', 'metabolites',
+                             'gene_reaction_rule']
     text_label_keys_to_keep = ['x', 'y', 'text']    
     for k, node in out['nodes'].iteritems():
             only_keep_keys(node, node_keys_to_keep)
@@ -130,56 +133,70 @@ def save_map(filename, out_directory, model_name):
                       'y': min_max['y'][0] - 0.05 * height,
                       'width': width + 0.10 * width,
                       'height': height + 0.10 * height}
-    out['info'] = { 'map_id': basename(filename).replace('.json', '').replace('.gz', '') }
 
-    out['membranes'] = []
+    header = {
+        "schema": "https://zakandrewking.github.io/escher/escher/jsonschema/1-0-0#",
+        "homepage": "https://zakandrewking.github.io/escher",
+        "map_id": basename(filename).replace('.json', '').replace('.gz', ''),
+        "map_name": "",
+        "map_description": ""
+        }
+
+    the_map = [header, out]
         
     # make sure it conforms
-    # conforms_to_spec(out)
+    # schema = json.loads(urlopen('https://zakandrewking.github.io/escher/schema/v1/schema')
+    #                     .read())
+    with open('/home/king/repos/escher/escher/jsonschema/1-0-0', 'r') as f:
+        schema = json.load(f)
+    jsonschema.validate(the_map, schema)
+    print 'Map is valid'
     
-    with open(out_file, 'w') as f: json.dump(out, f, allow_nan=False)
+    with open(out_file, 'w') as f: json.dump(the_map, f, allow_nan=False)
 
 def parse_nodes(nodes, compartment_id_key):
     for node in nodes:
         # assign new keys
+        try_assignment(node, 'MAPOBJECT_ID', 'object_id',
+                       cast=str, require=True)
         try_assignment(node, 'MAPNODENODETYPE', 'node_type',
                        cast=lambda x: str(x).lower(), require=True)
         try_assignment(node, 'MAPNODEPOSITIONX', 'x',
                        cast=float, require=True)
         try_assignment(node, 'MAPNODEPOSITIONY', 'y',
                        cast=float, require=True)
-        try_assignment(node, 'MAPNODELABELPOSITIONX', 'label_x',
-                       cast=float, fallback=node['x'])
-        try_assignment(node, 'MAPNODELABELPOSITIONY', 'label_y',
-                       cast=float, fallback=node['y'])
-        try_assignment(node, 'MOLECULEABBREVIATION', 'bigg_id',
-                       cast=lambda x: id_for_new_id_style(x, is_metabolite=True),
-                       fallback='')
-        try_assignment(node, 'MOLECULEOFFICIALNAME', 'name',
-                       cast=str, fallback='')
-        try_assignment(node, 'MAPNODEISPRIMARY', 'node_is_primary',
-                       cast=lambda x: True if x=='Y' else False, fallback=False)
-        try_assignment(node, 'MAPOBJECT_ID', 'id',
-                       cast=str, require=True)
-        try_assignment(node, 'MAPNODECOMPARTMENT_ID', 'compartment_id', cast=int)
-        try_assignment(node, 'MAPNODECOMPARTMENT_ID', 'compartment_name',
-                       cast=lambda x: compartment_id_key[int(x)][0])
-        try_assignment(node, 'MAPNODECOMPARTMENT_ID', 'compartment_letter',
-                       cast=lambda x: compartment_id_key[int(x)][1])
-        if node['bigg_id'] != '' and node['compartment_letter'] is not None:
-            node['bigg_id'] = "%s_%s" % (node['bigg_id'],
-                                         node['compartment_letter'])
+        if node['node_type'] == 'metabolite':
+            try_assignment(node, 'MAPNODELABELPOSITIONX', 'label_x',
+                           cast=float, fallback=node['x'])
+            try_assignment(node, 'MAPNODELABELPOSITIONY', 'label_y',
+                           cast=float, fallback=node['y'])
+            try_assignment(node, 'MOLECULEABBREVIATION', 'bigg_id',
+                           cast=lambda x: id_for_new_id_style(x, is_metabolite=True),
+                           fallback='')
+            try_assignment(node, 'MOLECULEOFFICIALNAME', 'name',
+                           cast=str, fallback='')
+            try_assignment(node, 'MAPNODEISPRIMARY', 'node_is_primary',
+                           cast=lambda x: True if x=='Y' else False, fallback=False)
+            try_assignment(node, 'MAPNODECOMPARTMENT_ID', 'compartment_id', cast=int)
+            try_assignment(node, 'MAPNODECOMPARTMENT_ID', 'compartment_name',
+                           cast=lambda x: compartment_id_key[int(x)][0])
+            try_assignment(node, 'MAPNODECOMPARTMENT_ID', 'compartment_letter',
+                           cast=lambda x: compartment_id_key[int(x)][1])
+            if node['bigg_id'] != '' and node['compartment_letter'] is not None:
+                node['bigg_id'] = "%s_%s" % (node['bigg_id'],
+                                             node['compartment_letter'])
         
     # Make into dictionary
-    return {a['id']: a for a in nodes if a['node_type'] not in ['system']}
+    return {a['object_id']: a for a in nodes
+            if a['node_type'] in ['metabolite', 'multimarker', 'midmarker']}
 
 def check_and_add_to_nodes(nodes, node_id, segment_id, reaction_id):
     try:
         node = nodes[node_id]
     except KeyError:
-        raise Exception('No match for node')
         return None
-    if 'connected_segments' not in node: node['connected_segments'] = []
+    if 'connected_segments' not in node:
+        node['connected_segments'] = []
     node['connected_segments'].append({'reaction_id': reaction_id,
                                        'segment_id': segment_id})
     return node_id
@@ -202,32 +219,25 @@ def parse_segments(segments, reactions, nodes):
         if len(reaction) > 1: reaction = reaction[0] # raise Exception('Too many matches')
         else: reaction = reaction[0]
             
-        # look out for r 2075901 in iJO1366_central_metabolism
-        # print reaction['MAPOBJECT_ID']
-        # if int(reaction['MAPOBJECT_ID']) == 2075901:
-        #     print segment
-        #     print
-        #     print [x for x in reactions if int(x['MAPOBJECT_ID']) in [2075901, 2075903]]
-        #     import ipdb; ipdb.set_trace()
-                    
-        # get the nodes
+        # get the nodes, and make sure they both exist before adding
         from_node_id = check_and_add_to_nodes(nodes, segment['MAPLINESEGMENTFROMNODE_ID'],
                                               str(segment_id), str(reaction['MAPOBJECT_ID']))
         to_node_id = check_and_add_to_nodes(nodes, segment['MAPLINESEGMENTTONODE_ID'],
                                             str(segment_id), str(reaction['MAPOBJECT_ID']))
-        segment['from_node_id'] = from_node_id
-        segment['to_node_id'] = to_node_id
-        try:
-            segment['b1'] = to_x_y(segment['MAPLINESEGMENTCONTROLPOINTS'][0])
-            segment['b2'] = to_x_y(segment['MAPLINESEGMENTCONTROLPOINTS'][1])
-        except KeyError:
-            segment['b1'] = None
-            segment['b2'] = None
+        if from_node_id is not None and to_node_id is not None:
+            segment['from_node_id'] = from_node_id
+            segment['to_node_id'] = to_node_id
+            try:
+                segment['b1'] = to_x_y(segment['MAPLINESEGMENTCONTROLPOINTS'][0])
+                segment['b2'] = to_x_y(segment['MAPLINESEGMENTCONTROLPOINTS'][1])
+            except KeyError:
+                segment['b1'] = None
+                segment['b2'] = None
 
-        if 'segments' not in reaction:
-            reaction['segments'] = {}
-        reaction['segments'][str(segment_id)] = segment
-        segment_id = segment_id + 1
+            if 'segments' not in reaction:
+                reaction['segments'] = {}
+            reaction['segments'][str(segment_id)] = segment
+            segment_id = segment_id + 1
 
 def parse_reactions(reactions, model, nodes):
     d = {'x': 10, 'y': -10}
@@ -236,7 +246,7 @@ def parse_reactions(reactions, model, nodes):
                        cast=str, require=True)
         try_assignment(reaction, 'REACTIONABBREVATION', 'bigg_id',
                        cast=id_for_new_id_style, require=True)
-        try_assignment(reaction, 'MAPOBJECT_ID', 'id',
+        try_assignment(reaction, 'MAPOBJECT_ID', 'object_id',
                        cast=str, require=True)
             
         # get reaction label position. set to the midmarker
@@ -255,17 +265,24 @@ def parse_reactions(reactions, model, nodes):
         # use the cobra model
         try:
             cobra_reaction = model.reactions.get_by_id(reaction['bigg_id'])
+            if (cobra_reaction.lower_bound < 0 and cobra_reaction.upper_bound <= 0):
+                # reverse the reaction
+                reaction['reversibility'] = False
+                reaction['metabolites'] = [{'bigg_id': k.id, 'coefficient': -v}
+                                           for k, v in cobra_reaction._metabolites.iteritems()]
+            else:
+                # get the reversibility
+                reaction['reversibility']  = (cobra_reaction.lower_bound < 0)
+                # get the metabolites
+                reaction['metabolites'] = [{'bigg_id': k.id, 'coefficient': v}
+                                            for k, v in cobra_reaction._metabolites.iteritems()]
+            reaction['gene_reaction_rule'] = cobra_reaction.gene_reaction_rule
         except KeyError:
-            print 'Could not find reaction %s. Assuming it is reversible.' % reaction['bigg_id']
-            reaction['reversibility']  = True
-            reaction['metabolites'] = {}
-        # get the reversibility
-        reaction['reversibility']  = (cobra_reaction.lower_bound < 0)
-        # get the metabolites
-        reaction['metabolites'] = {k.id: {"coefficient": int(v)} for k, v in cobra_reaction._metabolites.iteritems()}
+            print 'Could not add reaction %s' % reaction['bigg_id']
+            del reaction['segments']
         
     # take out the reactions without segments
-    return {r['id']: r for r in reactions if 'segments' in r}
+    return {r['object_id']: r for r in reactions if 'segments' in r}
 
 def parse_labels(labels):
     for label in labels:
@@ -273,11 +290,11 @@ def parse_labels(labels):
                        cast=float, require=True)
         try_assignment(label, 'MAPTEXTPOSITIONY', 'y',
                        cast=float, require=True)
-        try_assignment(label, 'MAPOBJECT_ID', 'id',
+        try_assignment(label, 'MAPOBJECT_ID', 'object_id',
                        cast=str, require=True)
         try_assignment(label, "MAPTEXTCONTENT", 'text',
                        cast=str, require=True)
-    return {r['id']: r for r in labels}
+    return {r['object_id']: r for r in labels}
 
 def only_keep_keys(d, keys):
     for k, v in d.items():
