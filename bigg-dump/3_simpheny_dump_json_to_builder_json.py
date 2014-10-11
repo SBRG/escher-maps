@@ -145,10 +145,8 @@ def save_map(filename, out_directory, model_name):
     the_map = [header, out]
         
     # make sure it conforms
-    # schema = json.loads(urlopen('https://zakandrewking.github.io/escher/schema/v1/schema')
-    #                     .read())
-    with open('/home/king/repos/escher/escher/jsonschema/1-0-0', 'r') as f:
-        schema = json.load(f)
+    schema = json.loads(urlopen('https://zakandrewking.github.io/escher/escher/jsonschema/1-0-0')
+                        .read())
     jsonschema.validate(the_map, schema)
     print 'Map is valid'
     

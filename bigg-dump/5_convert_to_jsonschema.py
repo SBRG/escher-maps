@@ -33,19 +33,15 @@ def main():
     except IndexError:
         raise Exception("Not enough arguments")
 
+    model_path = sys.argv[3]        
+    # get the cobra model
     try:
-        model_path = sys.argv[3]
-    except IndexError:
-        model = None
-    finally:
-        # get the cobra model
+        model = load_model(model_path)
+    except Exception:
         try:
-            model = load_model(model_path)
-        except Exception:
-            try:
-                model = cobra.io.read_sbml_model(model_path)
-            except IOError:
-                raise Exception('Could not find model in theseus or filesystem: %s' % model_path)
+            model = cobra.io.read_sbml_model(model_path)
+        except IOError:
+            raise Exception('Could not find model in theseus or filesystem: %s' % model_path)
 
     # get the current map
     with open(in_file, 'r') as f:
