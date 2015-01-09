@@ -144,11 +144,8 @@ def save_map(filename, out_directory, model_name):
 
     the_map = [header, out]
         
-    # make sure it conforms
-    schema = json.loads(urlopen('https://zakandrewking.github.io/escher/escher/jsonschema/1-0-0')
-                        .read())
-    jsonschema.validate(the_map, schema)
-    print 'Map is valid'
+    from escher.convert_map import convert
+    the_map = convert(the_map, model)
     
     with open(out_file, 'w') as f: json.dump(the_map, f, allow_nan=False)
 
