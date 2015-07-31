@@ -1,3 +1,6 @@
 .DS_Store
 gurobi.log
 *.pyc
+env/
+ome.egg-info/
+*.log
