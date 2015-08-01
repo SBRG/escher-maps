@@ -10,14 +10,18 @@ NOTE: This requires Escher 1.2-dev.
 """
 
 # locations
-map_paths = ['maps', '../1-0-0/maps']
+map_paths = [
+    {'in_dir':'maps', 'out_dir': 'maps-converted'},
+    {'in_dir': '../1-0-0/maps', 'out_dir': '../1-0-0/2/maps', 'org_directories': True, 'save_model_dir': '../1-0-0/2/models'},
+]
 model_id_mapping = {'EcoliCore': 'e_coli_core',
+                    'E coli core': 'e_coli_core',
                     'Recon1': 'RECON1'}
 
 
 import requests
 from os import makedirs, listdir
-from os.path import join, isdir
+from os.path import join, isdir, basename
 import json
 import cobra
 import re
@@ -42,11 +46,11 @@ def make_url(path):
     return 'http://bigg.ucsd.edu/api/v2/%s' % path.lstrip('/')
 
 def parse_model(filename):
-    """Get the model from the filename."""
+    """Split the model and the rest of the filename."""
     if '_' in filename:
-        return filename.split('_', 1)[0]
+        return filename.split('_', 1)
     else:
-        return filename.split('.', 1)[0]
+        return filename.split('.', 1)
 
 def parse_map_name(filename):
     """Get the map name from the filename."""
@@ -54,12 +58,6 @@ def parse_map_name(filename):
 
 def load_bigg_model(model_id):
     """Try to download this model from BiGG."""
-    # check id mapping
-    try:
-        model_id = model_id_mapping[model_id]
-    except KeyError:
-        pass
-    
     # download the model
     url = make_url('/models/%s/download' % model_id)
     response = requests.get(url)
@@ -68,9 +66,13 @@ def load_bigg_model(model_id):
                             (model_id, url, response.status_code))
     return cobra.io.json._from_dict(response.json())
 
-def fix_filename(filename):
+def save_model(directory, model, model_id):
+    """Save this JSON model"""
+    cobra.io.save_json_model(model, join(directory, '%s.json' % model_id))
+
+def fix_filename(filename, model_id):
     """Make an Escher compatible filename."""
-    return '.'.join(filename.split('_', 1))
+    return '%s.%s' % (model_id, parse_model(filename)[1])
 
 def fix_mapping(mapping, mapping_type):
     """Some published models to not match maps. Apply this to a mapping dictionary
@@ -81,6 +83,7 @@ def fix_mapping(mapping, mapping_type):
         (r'^([DL])_', r'\1-'), # in published model, in map
         (r'_([CDLR0-9])(_|$)', r'-\1\2'),
         (r'_DASH_', r'-'),
+        (r'_DASH_', r'__'),
         (r'_LPAREN_(\w+)_RPAREN_', r'(\1)'),
         (r"'", ''),
         (r'_([a-z])_?$', r'(\1)'),
@@ -155,43 +158,90 @@ def get_metabolite_mapping(model_id):
     session.close()
     return fix_mapping(mapping, 'metabolite')
 
+def get_map_dirs(path_list):
+    """Finds maps and makes output directories.
 
-def get_dirs(path_list):
-    files = []; outputs = set()
-    for path in path_list:
-        # recurse
-        for filename in listdir(path):
-            filepath = join(path, filename) 
-            if isdir(filepath):
-                files = files + get_dirs([filepath])
-            else:
-                output = '%s-converted' % path
-                outputs.add(output)
-                files.append((filepath, filename, output))
+    Returns a list of tuples with two elements:
+
+    (the path for the existing file, the output directory for the new file, the model save directory or None)
+    
+    Arguments
+    ---------
+
+    path_list: A list of dictionaries keys for input, output, and whether the
+    directory is divided by organism.
+
+    """
+    files = []; dirs_to_make = set()
+    for d in path_list:
+        in_dir = d['in_dir']
+        out_dir = d['out_dir']
+        org_directories = d.get('org_directories', False)
+        save_model_dir = d.get('save_model_dir', None)
+
+        # loop through organisms
+        if org_directories:
+            for org_dir in listdir(in_dir):
+                org_path = join(in_dir, org_dir)
+                if not isdir(org_path):
+                    continue
+                for map_filename in listdir(org_path):
+                    map_path = join(org_path, map_filename)
+                    output = join(out_dir, org_dir)
+                    dirs_to_make.add(output)
+                    # save model
+                    if save_model_dir:
+                        model_output_dir = join(save_model_dir, org_dir)
+                        dirs_to_make.add(model_output_dir)
+                    else:
+                        model_output_dir = None
+                    files.append((map_path, output, model_output_dir))
+        else:
+            for map_filename in listdir(in_dir):
+                map_path = join(in_dir, map_filename)
+                output = out_dir
+                dirs_to_make.add(output)
+                if save_model_dir:
+                    dirs_to_make.add(save_model_dir)
+                files.append((map_path, output, save_model_dir))
     # make the directories
-    for output in outputs:
+    for output in dirs_to_make:
         try:
             makedirs(output)
         except OSError:
             pass
+        else:
+            print('Made directory %s' % output)
     return files
 
 
 def main():
     # go though the maps
-    for filepath, filename, output_path in get_dirs(map_paths):
+    for filepath, output_path, save_model_dir in get_map_dirs(map_paths):
+        filename = basename(filepath)
         logging.info('Converting %s' % filename)
         # # debug
         # if 'iAF692' not in filename:
         #     continue
         
-        # get the model
-        model_id = parse_model(filename)
+        # get the model id
+        model_id = parse_model(filename)[0]
+        # check id mapping
+        try:
+            model_id = model_id_mapping[model_id]
+        except KeyError:
+            pass
+    
+        # load the model
         try:
             model = load_bigg_model(model_id)
         except NotFoundError as e:
             print(filepath, e)
             continue
+
+        # save the bigg model
+        if save_model_dir:
+            save_model(save_model_dir, model, model_id)
 
         # get the id mapping dictionaries. Eventually, this should be available
         # in the API.
@@ -208,7 +258,7 @@ def main():
                           gene_id_mapping=gene_id_mapping)
 
         # write
-        with open(join(output_path, fix_filename(filename)), 'w') as f:
+        with open(join(output_path, fix_filename(filename, model_id)), 'w') as f:
             json.dump(map_out, f)
 
 if __name__ == '__main__':

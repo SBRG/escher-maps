@@ -4,3 +4,4 @@ gurobi.log
 env/
 ome.egg-info/
 *.log
+.#*
