@@ -12,7 +12,7 @@ NOTE: This requires Escher 1.2-dev.
 # locations
 map_paths = [
     {'in_dir':'maps', 'out_dir': 'maps-converted'},
-    {'in_dir': '../1-0-0/maps', 'out_dir': '../1-0-0/2/maps', 'org_directories': True, 'save_model_dir': '../1-0-0/2/models'},
+    {'in_dir': '../1-0-0/2/maps', 'out_dir': '../1-0-0/3/maps', 'org_directories': True, 'save_model_dir': '../1-0-0/3/models'},
 ]
 model_id_mapping = {'EcoliCore': 'e_coli_core',
                     'E coli core': 'e_coli_core',
@@ -47,10 +47,7 @@ def make_url(path):
 
 def parse_model(filename):
     """Split the model and the rest of the filename."""
-    if '_' in filename:
-        return filename.split('_', 1)
-    else:
-        return filename.split('.', 1)
+    return filename.split('.', 1)
 
 def parse_map_name(filename):
     """Get the map name from the filename."""
@@ -130,7 +127,7 @@ def get_reaction_mapping(model_id):
             mapping[old] = '%s_copy1' % new
         else:
             mapping[old] = new
-        
+
     session.close()
     return fix_mapping(mapping, 'reaction')
 
@@ -141,7 +138,7 @@ def get_metabolite_mapping(model_id):
     result_db = (session.query(Synonym.synonym, Component.bigg_id, Compartment.bigg_id)
                  .join(OldIDSynonym, OldIDSynonym.synonym_id == Synonym.id)
                  # for debugging
-                 # .filter(OldIDSynonym.type == 'model_compartmentalized_component') 
+                 # .filter(OldIDSynonym.type == 'model_compartmentalized_component')
                  .join(ModelCompartmentalizedComponent,
                        ModelCompartmentalizedComponent.id == OldIDSynonym.ome_id)
                  .join(CompartmentalizedComponent,
@@ -164,7 +161,7 @@ def get_map_dirs(path_list):
     Returns a list of tuples with two elements:
 
     (the path for the existing file, the output directory for the new file, the model save directory or None)
-    
+
     Arguments
     ---------
 
@@ -223,7 +220,7 @@ def main():
         # # debug
         # if 'iAF692' not in filename:
         #     continue
-        
+
         # get the model id
         model_id = parse_model(filename)[0]
         # check id mapping
@@ -231,7 +228,7 @@ def main():
             model_id = model_id_mapping[model_id]
         except KeyError:
             pass
-    
+
         # load the model
         try:
             model = load_bigg_model(model_id)
@@ -252,7 +249,7 @@ def main():
         # convert the map
         with open(filepath, 'r') as f:
             map_in = json.load(f)
-        map_out = convert(map_in, model, map_name=parse_map_name(filename),
+        map_out = convert(map_in, model, map_name=parse_map_name(fix_filename(filename, model_id)),
                           reaction_id_mapping=reaction_id_mapping,
                           metabolite_id_mapping=metabolite_id_mapping,
                           gene_id_mapping=gene_id_mapping)
