@@ -7,6 +7,8 @@ database.
 
 NOTE: This requires Escher 1.2-dev.
 
+TODO: This should update the last-modified date.
+
 """
 
 # locations
