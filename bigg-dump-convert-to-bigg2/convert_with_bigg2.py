@@ -11,13 +11,14 @@ NOTE: This requires Escher 1.2-dev.
 
 # locations
 map_paths = [
-    {'in_dir':'maps', 'out_dir': 'maps-converted'},
-    {'in_dir': '../1-0-0/2/maps', 'out_dir': '../1-0-0/3/maps', 'org_directories': True, 'save_model_dir': '../1-0-0/3/models'},
+    # {'in_dir':'maps', 'out_dir': 'maps-converted'},
+    {'in_dir': '../1-0-0/4/maps', 'out_dir': '../1-0-0/4/maps-converted',
+     'org_directories': True, 'save_model_dir': '../1-0-0/4/models'},
 ]
-model_id_mapping = {'EcoliCore': 'e_coli_core',
-                    'E coli core': 'e_coli_core',
-                    'Recon1': 'RECON1'}
-
+model_id_mapping = {}
+# {'EcoliCore': 'e_coli_core',
+#  'E coli core': 'e_coli_core',
+#  'Recon1': 'RECON1'}
 
 import requests
 from os import makedirs, listdir
@@ -43,7 +44,7 @@ class NotFoundError(Exception):
 
 def make_url(path):
     """make a bigg api request url"""
-    return 'http://bigg.ucsd.edu/api/v2/%s' % path.lstrip('/')
+    return 'http://zak.ucsd.edu:8888/api/v2/%s' % path.lstrip('/')
 
 def parse_model(filename):
     """Split the model and the rest of the filename."""
@@ -182,7 +183,11 @@ def get_map_dirs(path_list):
                 org_path = join(in_dir, org_dir)
                 if not isdir(org_path):
                     continue
+
                 for map_filename in listdir(org_path):
+                    if map_filename.startswith('.'):
+                        continue
+
                     map_path = join(org_path, map_filename)
                     output = join(out_dir, org_dir)
                     dirs_to_make.add(output)
@@ -195,6 +200,9 @@ def get_map_dirs(path_list):
                     files.append((map_path, output, model_output_dir))
         else:
             for map_filename in listdir(in_dir):
+                if map_filename.startswith('.'):
+                    continue
+
                 map_path = join(in_dir, map_filename)
                 output = out_dir
                 dirs_to_make.add(output)
