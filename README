@@ -3,3 +3,6 @@ This repository contains all the metabolic maps extracted from the UCSD SBRG BIG
 Maps in the directory `v0.3` can be viewed using the metabolic_map function in Escher version <= 0.3.
 
 Maps in the directory `v1.0` can be loaded in the Escher Builder, or using the escher.Builder() constructor.
+
+
+This repository is here for historical purposes, but all maps are now being stored on the Escher website in this repository: https://github.com/escher/escher.github.io
